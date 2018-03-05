@@ -36,7 +36,9 @@ import Helmet from 'react-helmet';
 // Import required modules
 import routes from '../client/routes';
 import { fetchComponentData } from './util/fetchData';
-import posts from './routes/post.routes';
+// import posts from './routes/post.routes';
+import tweets from './routes/tweet.routes';
+import tweetData from './tweetData';
 import dummyData from './dummyData';
 import serverConfig from './config';
 
@@ -50,8 +52,8 @@ mongoose.connect(serverConfig.mongoURL, (error) => {
     throw error;
   }
 
-  // feed some dummy data in DB.
   dummyData();
+  tweetData();
 });
 
 // Apply body Parser and server public assets and routes
@@ -59,7 +61,8 @@ app.use(compression());
 app.use(bodyParser.json({ limit: '20mb' }));
 app.use(bodyParser.urlencoded({ limit: '20mb', extended: false }));
 app.use(Express.static(path.resolve(__dirname, '../dist/client')));
-app.use('/api', posts);
+// app.use('/api', posts);
+app.use('/api', tweets);
 
 // Render Initial HTML
 const renderFullPage = (html, initialState) => {
@@ -80,6 +83,7 @@ const renderFullPage = (html, initialState) => {
         ${head.script.toString()}
 
         ${isProdMode ? `<link rel='stylesheet' href='${assetsManifest['/app.css']}' />` : ''}
+        <link href='https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.css' rel='stylesheet' />
         <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'/>
         <link rel="shortcut icon" href="http://res.cloudinary.com/hashnode/image/upload/v1455629445/static_imgs/mern/mern-favicon-circle-fill.png" type="image/png" />
       </head>
@@ -146,7 +150,7 @@ app.use((req, res, next) => {
 // start app
 app.listen(serverConfig.port, (error) => {
   if (!error) {
-    console.log(`MERN is running on port: ${serverConfig.port}! Build something amazing!`); // eslint-disable-line
+    console.log(`Weather Tweets is running on port: ${serverConfig.port}!`); // eslint-disable-line
   }
 });
 

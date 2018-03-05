@@ -1,9 +1,9 @@
 {
-  "name": "mern-starter",
-  "version": "2.0.0",
-  "description": "Boilerplate project for building Isomorphic apps using React and Redux",
+  "name": "weather-tweets",
+  "version": "0.1.0",
+  "description": "Real-Time map of weather related tweets.",
   "scripts": {
-    "test": "cross-env NODE_ENV=test PORT=8080 MONGO_URL=mongodb://localhost:27017/mern-test node_modules/.bin/nyc node --harmony-proxies node_modules/.bin/ava",
+    "test": "cross-env NODE_ENV=test PORT=8080 MONGO_URL=mongodb://localhost:27017/tweets-test node_modules/.bin/nyc node --harmony-proxies node_modules/.bin/ava",
     "watch:test": "npm run test -- --watch",
     "cover": "nyc npm run test",
     "check-coverage": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
@@ -22,13 +22,17 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Hashnode/mern-starter.git"
+    "url": "git+https://github.com/griffobeid/weather-tweets.git"
   },
   "bugs": {
-    "url": "https://github.com/Hashnode/mern-starter/issues"
+    "url": "https://github.com/griffobeid/weather-tweets/issues"
   },
-  "homepage": "https://github.com/Hashnode/mern-starter#readme",
-  "author": "Prashant Abhishek <prashant.abhishek7g@gmail.com>, Mayank Chandola <imayankchd@gmail.com>, Sandeep Panda <sandeep@hashnode.com>, Syed Fazle Rahman <fazle@hashnode.com>, Alkshendra Maurya <alkshendra@hashnode.com>",
+  "homepage": "https://github.com/griffobeid/weather-tweets#readme",
+  "author": {
+    "name": "Griffin Obeid",
+    "email": "griffobeid@gmail.com",
+    "url": "https://github.com/griffobeid"
+  },
   "license": "MIT",
   "dependencies": {
     "babel-core": "^6.9.1",
@@ -41,16 +45,19 @@
     "intl-locales-supported": "^1.0.0",
     "isomorphic-fetch": "^2.2.1",
     "limax": "^1.3.0",
+    "mapbox-gl": "^0.44.1",
     "mongoose": "^4.4.20",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-helmet": "^3.1.0",
     "react-intl": "^2.1.2",
+    "react-map-gl": "^3.2.4",
     "react-redux": "^4.4.5",
     "react-router": "^2.4.1",
     "redux": "^3.5.2",
     "redux-thunk": "^2.1.0",
-    "sanitize-html": "^1.11.4"
+    "sanitize-html": "^1.11.4",
+    "twitter": "^1.7.1"
   },
   "devDependencies": {
     "ava": "^0.15.2",
@@ -93,6 +100,7 @@
     "postcss-loader": "^0.9.1",
     "postcss-reporter": "^1.3.3",
     "pre-commit": "^1.1.3",
+    "raw-loader": "^0.5.1",
     "react-addons-test-utils": "^15.1.0",
     "react-hot-loader": "^3.0.0-beta.2",
     "redux-ava": "^2.0.0",

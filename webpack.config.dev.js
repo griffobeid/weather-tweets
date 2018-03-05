@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var path = require('path'); 
 var cssnext = require('postcss-cssnext');
 var postcssFocus = require('postcss-focus');
 var postcssReporter = require('postcss-reporter');
@@ -32,6 +33,9 @@ module.exports = {
       'client',
       'node_modules',
     ],
+    alias: {
+      'mapbox-gl': path.resolve('./node_modules/mapbox-gl/dist/mapbox-gl.js')
+    },
   },
 
   module: {
@@ -44,6 +48,9 @@ module.exports = {
         test: /\.css$/,
         include: /node_modules/,
         loaders: ['style-loader', 'css-loader'],
+      }, {
+        test: /\.txt$/,
+        loader: 'raw-loader'
       }, {
         test: /\.jsx*$/,
         exclude: [/node_modules/, /.+\.config.js/],
@@ -70,6 +77,9 @@ module.exports = {
         CLIENT: JSON.stringify(true),
         'NODE_ENV': JSON.stringify('development'),
       }
+    }),
+    new webpack.EnvironmentPlugin({
+      'MapboxAccessToken': process.env.MAPBOX_TOKEN
     }),
   ],
 
