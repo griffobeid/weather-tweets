@@ -8,7 +8,7 @@ class TweetMarker extends Component {
   }
 
   render() {
-    console.log(this.props);
+    console.log(this.props); // eslint-disable-line
     return (
       <Marker longitude={50} latitude={60}>
         <div className="marker">

@@ -12,7 +12,7 @@ class TweetMarkers extends Component {
   }
 
   render() {
-    console.log(this.props.tweets);
+    console.log(this.props.tweets); // eslint-disable-line
     let tweetList = this.props.tweets.map((tweet, index) => {
       return (
         <TweetMarker
