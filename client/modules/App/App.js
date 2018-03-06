@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 
 // Import Components
 import Helmet from 'react-helmet';
@@ -42,10 +42,5 @@ export class App extends Component {
     );
   }
 }
-
-App.propTypes = {
-  children: PropTypes.object.isRequired,
-  dispatch: PropTypes.func.isRequired,
-};
 
 export default App;

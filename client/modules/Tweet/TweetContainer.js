@@ -1,10 +1,12 @@
-import React, { PropTypes, Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import TweetMarker from './components/TweetMarker';
 
-// Import Actions and Reducers
-import fetchTweets from './TweetActions';
-import getTweets from './TweetReducer';
+// Import Actions
+import { fetchTweets } from './TweetActions';
+
+// Import Selectors
+import { getTweets } from './TweetReducer';
 
 class TweetMarkers extends Component {
   componentDidMount() {
@@ -12,12 +14,12 @@ class TweetMarkers extends Component {
   }
 
   render() {
-    console.log(this.props.tweets); // eslint-disable-line
     let tweetList = this.props.tweets.map((tweet, index) => {
       return (
         <TweetMarker
           key={index}
-          coords={tweet.coords}
+          lon={tweet.longitude}
+          lat={tweet.latitude}
           createdAt={tweet.createdAt}
           id={tweet.id}
           text={tweet.text}
@@ -45,7 +47,7 @@ function mapStateToProps(state) {
 }
 
 TweetMarkers.propTypes = {
-  tweets: PropTypes.array.isRequired,
+  tweets: PropTypes.Array,
   dispatch: PropTypes.func.isRequired,
 };
 

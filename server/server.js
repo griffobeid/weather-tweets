@@ -35,10 +35,8 @@ import Helmet from 'react-helmet';
 // Import required modules
 import routes from '../client/routes';
 import { fetchComponentData } from './util/fetchData';
-// import posts from './routes/post.routes';
 import tweets from './routes/tweet.routes';
 import tweetData from './tweetData';
-import dummyData from './dummyData';
 import serverConfig from './config';
 
 // Set native promises as mongoose promise
@@ -51,7 +49,7 @@ mongoose.connect(serverConfig.mongoURL, (error) => {
     throw error;
   }
 
-  dummyData();
+  // start the tweet stream
   tweetData();
 });
 

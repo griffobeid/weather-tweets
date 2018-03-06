@@ -2,7 +2,8 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const tweetSchema = new Schema({
-  coords: { type: 'Array', required: true },
+  longitude: { type: 'Number', required: true },
+  latitude: { type: 'Number', required: true },
   coordType: { type: 'String', required: true },
   createdAt: { type: 'String', required: true },
   id: { type: 'Number', required: true },

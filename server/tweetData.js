@@ -23,8 +23,11 @@ const isTweetGeotagged = (tweet) => {
 };
 
 const trimTweet = (tweet) => {
+  const lon = tweet.coordinates.coordinates[0];
+  const lat = tweet.coordinates.coordinates[1];
   const trimmed = {
-    coords: tweet.coordinates.coordinates,
+    longitude: lon,
+    latitude: lat,
     coordType: tweet.coordinates.type,
     createdAt: tweet.created_at,
     id: tweet.id,

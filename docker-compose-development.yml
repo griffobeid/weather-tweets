@@ -9,7 +9,7 @@ web:
    - .:/usr/src/app/
   environment:
    NODE_ENV: development 
-   MONGO_URL: mongodb://db:27017/tweets
+   MONGO_URL: mongodb://db:27017/weather-tweets
 db:
   image: mongo:latest
   ports:

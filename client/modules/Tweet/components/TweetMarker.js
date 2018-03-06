@@ -1,26 +1,20 @@
-import React, { PropTypes, Component } from 'react';
+import React, { PropTypes } from 'react';
 import { Marker } from 'react-map-gl';
 
 
-class TweetMarker extends Component {
-  componentDidMount() {
-
-  }
-
-  render() {
-    console.log(this.props); // eslint-disable-line
-    return (
-      <Marker longitude={50} latitude={60}>
-        <div className="marker">
-          {this.props.text}
-        </div>
-      </Marker>
-    );
-  }
+function TweetMarker(props) {
+  return (
+    <Marker longitude={props.lon} latitude={props.lat}>
+      <div className="marker">
+        "Im a Tweet"
+      </div>
+    </Marker>
+  );
 }
 
 TweetMarker.propTypes = {
-  coords: PropTypes.arrayOf(Number).isRequired,
+  lon: PropTypes.Number,
+  lat: PropTypes.Number,
   createdAt: PropTypes.string.isRequired,
   id: PropTypes.Number,
   text: PropTypes.string.isRequired,
