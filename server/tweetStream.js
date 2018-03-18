@@ -34,8 +34,8 @@ const trimTweet = (tweet) => {
     text: tweet.text,
     name: tweet.user.name,
     location: tweet.user.location,
-    profile_image_url: tweet.user.profile_image_url,
-    screen_name: tweet.user.screen_name,
+    profileImageUrl: tweet.user.profile_image_url,
+    screenName: tweet.user.screen_name,
   };
   return trimmed;
 };

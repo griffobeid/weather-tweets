@@ -1,0 +1,28 @@
+.container {
+  width: 300px;
+}
+
+.row {
+  display: table;
+  margin-bottom: 5px;
+}
+
+.imgContainer {
+  float: left;
+  display: block;
+  width: 25%;
+  margin-right: 5px;
+}
+
+.imgContainer img {
+  width: 100%;
+  height: auto;
+}
+
+.nameContainer {
+  float: right;
+  width: 72%;
+  text-align: left;
+}
+
+

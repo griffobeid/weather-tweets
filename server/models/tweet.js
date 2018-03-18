@@ -10,8 +10,8 @@ const tweetSchema = new Schema({
   text: { type: 'String', required: true },
   name: { type: 'String', required: false },
   location: { type: 'String', required: false },
-  profile_image_url: { type: 'String', required: false },
-  screen_name: { type: 'String', required: true },
+  profileImageUrl: { type: 'String', required: false },
+  screenName: { type: 'String', required: true },
   dateAdded: { type: 'Date', default: Date.now, required: true },
 });
 

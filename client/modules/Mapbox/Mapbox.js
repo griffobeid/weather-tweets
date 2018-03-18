@@ -1,14 +1,22 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import MapGL, { Marker } from 'react-map-gl';
+import MapGL, { Marker, Popup, NavigationControl } from 'react-map-gl';
 import { defaultMapStyle } from './styles/map-style.js';
 import TweetMarker from '../Tweet/TweetMarker';
+import TweetInfo from '../Tweet/TweetInfo';
 
 // Import Actions
 import { fetchTweets } from '../Tweet/TweetActions';
 
 // Import Selectors
 import { getTweets } from '../Tweet/TweetReducer';
+
+const navStyle = {
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  padding: '10px',
+};
 
 class Mapbox extends Component {
   constructor(props) {
@@ -25,6 +33,7 @@ class Mapbox extends Component {
         width: 500,
         height: 500,
       },
+      popupInfo: null,
     };
   }
 
@@ -59,8 +68,25 @@ class Mapbox extends Component {
         longitude={tweet.longitude}
         latitude={tweet.latitude}
       >
-        <TweetMarker />
+        <TweetMarker onClick={() => this.setState({ popupInfo: tweet })} />
       </Marker>
+    );
+  }
+
+
+  _renderPopup() {
+    const { popupInfo } = this.state;
+
+    return popupInfo && (
+      <Popup
+        tipSize={5}
+        anchor="top"
+        longitude={popupInfo.longitude}
+        latitude={popupInfo.latitude}
+        onClose={() => this.setState({ popupInfo: null })}
+      >
+        <TweetInfo info={popupInfo} />
+      </Popup>
     );
   }
 
@@ -74,7 +100,15 @@ class Mapbox extends Component {
         onViewportChange={this._updateViewport}
         mapboxApiAccessToken={this.props.token}
       >
+
         {this.props.tweets.map(this._renderTweetMarker)}
+
+        {this._renderPopup()}
+
+        <div className="nav" style={navStyle}>
+          <NavigationControl onViewportChange={this._updateViewport} />
+        </div>
+
       </MapGL>
     );
   }
