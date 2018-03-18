@@ -36,7 +36,7 @@ import Helmet from 'react-helmet';
 import routes from '../client/routes';
 import { fetchComponentData } from './util/fetchData';
 import tweets from './routes/tweet.routes';
-import tweetData from './tweetData';
+import tweetStream from './tweetStream';
 import serverConfig from './config';
 
 // Set native promises as mongoose promise
@@ -50,7 +50,12 @@ mongoose.connect(serverConfig.mongoURL, (error) => {
   }
 
   // start the tweet stream
-  tweetData();
+  try {
+    tweetStream();
+    console.log('Twitter API Stream initiated.'); // eslint-disable-line no-console
+  } catch (err) {
+    throw err;
+  }
 });
 
 // Apply body Parser and server public assets and routes
@@ -122,7 +127,7 @@ app.use((req, res, next) => {
       return next();
     }
 
-    const store = configureStore();
+    const store = configureStore({ });
 
     return fetchComponentData(store, renderProps.components, renderProps.params)
       .then(() => {

@@ -34,11 +34,12 @@ module.exports = {
       'node_modules',
     ],
     alias: {
-      'mapbox-gl': path.resolve('./node_modules/mapbox-gl/dist/mapbox-gl.js')
+      'mapbox-gl$': path.resolve('./node_modules/mapbox-gl/dist/mapbox-gl.js')
     },
   },
 
   module: {
+    noParse: /node_modules\/mapbox-gl\/dist\/mapbox-gl.js/,
     loaders: [
       {
         test: /\.css$/,

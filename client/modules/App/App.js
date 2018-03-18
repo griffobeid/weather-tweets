@@ -5,11 +5,12 @@ import Helmet from 'react-helmet';
 import Mapbox from '../Mapbox/Mapbox.js';
 import DevTools from './components/DevTools';
 
-
 export class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { isMounted: false };
+    this.state = {
+      isMounted: false,
+    };
   }
 
   componentDidMount() {
@@ -36,7 +37,7 @@ export class App extends Component {
               },
             ]}
           />
-          <Mapbox />
+          <Mapbox token="pk.eyJ1IjoiZ29iZWlkIiwiYSI6ImNqY2plOTY3cjNjZGEzNG1tYTBhNDR4ODcifQ.Gk_662sQu4i6GmshCbCQ8Q" />
         </div>
       </div>
     );

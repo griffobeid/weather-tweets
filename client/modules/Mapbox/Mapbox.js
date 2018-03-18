@@ -1,9 +1,14 @@
 import React, { Component, PropTypes } from 'react';
-import MapGL from 'react-map-gl';
+import { connect } from 'react-redux';
+import MapGL, { Marker } from 'react-map-gl';
 import { defaultMapStyle } from './styles/map-style.js';
-import TweetMarkers from '../Tweet/TweetContainer';
+import TweetMarker from '../Tweet/TweetMarker';
 
-const TOKEN = 'pk.eyJ1IjoiZ29iZWlkIiwiYSI6ImNqY2plOTY3cjNjZGEzNG1tYTBhNDR4ODcifQ.Gk_662sQu4i6GmshCbCQ8Q';
+// Import Actions
+import { fetchTweets } from '../Tweet/TweetActions';
+
+// Import Selectors
+import { getTweets } from '../Tweet/TweetReducer';
 
 class Mapbox extends Component {
   constructor(props) {
@@ -12,9 +17,9 @@ class Mapbox extends Component {
     this.state = {
       mapStyle: defaultMapStyle,
       viewport: {
-        latitude: 40,
+        latitude: 37.785164,
         longitude: -100,
-        zoom: 3,
+        zoom: 3.5,
         bearing: 0,
         pitch: 0,
         width: 500,
@@ -26,6 +31,7 @@ class Mapbox extends Component {
   componentDidMount() {
     window.addEventListener('resize', this._resize);
     this._resize();
+    this.props.dispatch(fetchTweets());
   }
 
   componentWillUnmount() {
@@ -42,27 +48,54 @@ class Mapbox extends Component {
     });
   };
 
+  _updateViewport = (viewport) => {
+    this.setState({ viewport });
+  }
+
+  _renderTweetMarker = (tweet, index) => {
+    return (
+      <Marker
+        key={`marker-${index}`}
+        longitude={tweet.longitude}
+        latitude={tweet.latitude}
+      >
+        <TweetMarker />
+      </Marker>
+    );
+  }
+
   render() {
     const { viewport, mapStyle } = this.state;
 
     return (
-      <div>
-        <MapGL
-          {...viewport}
-          mapStyle={mapStyle}
-          onViewportChange={newView => this.setState({ viewport: newView })}
-          mapboxApiAccessToken={TOKEN}
-        >
-          <TweetMarkers />
-        </MapGL>
-      </div>
+      <MapGL
+        {...viewport}
+        mapStyle={mapStyle}
+        onViewportChange={this._updateViewport}
+        mapboxApiAccessToken={this.props.token}
+      >
+        {this.props.tweets.map(this._renderTweetMarker)}
+      </MapGL>
     );
   }
 }
 
+// Actions required to provide data for this component to render in sever side.
+Mapbox.need = [() => { return fetchTweets(); }];
+
+// Retrieve data from store as props
+function mapStateToProps(state) {
+  return {
+    tweets: getTweets(state),
+  };
+}
+
 Mapbox.propTypes = {
+  tweets: PropTypes.array.isRequired,
   width: PropTypes.number,
   height: PropTypes.number,
+  token: PropTypes.string.isRequired,
+  dispatch: PropTypes.func.isRequired,
 };
 
-export default Mapbox;
+export default connect(mapStateToProps)(Mapbox);
