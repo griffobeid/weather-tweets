@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 // Import Components
 import Helmet from 'react-helmet';
 import Mapbox from '../Mapbox/Mapbox.js';
-import DevTools from './components/DevTools';
+// import DevTools from './components/DevTools';
 
 export class App extends Component {
   constructor(props) {
@@ -21,7 +21,7 @@ export class App extends Component {
   render() {
     return (
       <div>
-        {this.state.isMounted && !window.devToolsExtension && process.env.NODE_ENV === 'development' && <DevTools />}
+        {this.state.isMounted && !window.devToolsExtension && process.env.NODE_ENV === 'development'/* && <DevTools /> */}
         <div>
           <Helmet
             title="Weather Tweets"

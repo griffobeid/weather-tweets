@@ -1,7 +1,7 @@
 /**
  * Root Component
  */
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { Provider } from 'react-redux';
 import { Router, browserHistory } from 'react-router';
 
@@ -22,5 +22,5 @@ export default function App(props) {
 }
 
 App.propTypes = {
-  store: React.PropTypes.object.isRequired,
+  store: PropTypes.object.isRequired,
 };

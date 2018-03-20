@@ -36,8 +36,11 @@ import Helmet from 'react-helmet';
 import routes from '../client/routes';
 import { fetchComponentData } from './util/fetchData';
 import tweets from './routes/tweet.routes';
-import tweetStream from './tweetStream';
+// import tweetStream from './tweetStream';
 import serverConfig from './config';
+import { mapboxToken } from '../mapbox-config.json';
+
+console.log(mapboxToken);
 
 // Set native promises as mongoose promise
 mongoose.Promise = global.Promise;
@@ -51,8 +54,8 @@ mongoose.connect(serverConfig.mongoURL, (error) => {
 
   // start the tweet stream
   try {
-    tweetStream();
-    console.log('Twitter API Stream initiated.'); // eslint-disable-line no-console
+    // tweetStream();
+    console.log('Twitter API Stream paused.'); // eslint-disable-line no-con
   } catch (err) {
     throw err;
   }
@@ -146,6 +149,9 @@ app.use((req, res, next) => {
       .catch((error) => next(error));
   });
 });
+
+// Create a window object if undefined
+//if (typeof(window) === 'undefined') global.window = {};
 
 // start app
 app.listen(serverConfig.port, (error) => {

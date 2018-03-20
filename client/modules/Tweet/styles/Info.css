@@ -1,5 +1,5 @@
 .container {
-  width: 300px;
+  width: 325px;
 }
 
 .row {
@@ -10,7 +10,7 @@
 .imgContainer {
   float: left;
   display: block;
-  width: 25%;
+  width: 22%;
   margin-right: 5px;
 }
 
@@ -21,8 +21,11 @@
 
 .nameContainer {
   float: right;
-  width: 72%;
+  width: 76%;
   text-align: left;
 }
 
+.nameContainer p {
+  font-size: 10pt;
+}
 

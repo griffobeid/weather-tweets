@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/Cellar/node/9.8.0/bin/node /usr/local/bin/yarn test
+  /usr/local/Cellar/node/9.8.0/bin/node /usr/local/bin/yarn add eslint-config-plugin:ava immutable
 
 PATH: 
   /usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
@@ -61,16 +61,19 @@ npm manifest:
       "limax": "^1.3.0",
       "mapbox-gl": "^0.44.1",
       "mongoose": "^4.4.20",
+      "r-dom": "^2.4.0",
       "react": "^15.1.0",
       "react-dom": "^15.1.0",
       "react-helmet": "^3.1.0",
       "react-map-gl": "^3.2.5",
+      "react-map-gl-heatmap-overlay": "^1.1.4",
       "react-redux": "^4.4.5",
       "react-router": "^2.4.1",
       "redux": "^3.5.2",
       "redux-thunk": "^2.1.0",
       "sanitize-html": "^1.11.4",
-      "twitter": "^1.7.1"
+      "twitter": "^1.7.1",
+      "viewport-mercator-project": "^5.0.1"
     },
     "devDependencies": {
       "ava": "^0.15.2",
@@ -1617,7 +1620,7 @@ Lockfile:
       split-string "^3.0.2"
       to-regex "^3.0.1"
   
-  brfs@^1.4.0:
+  brfs@^1.4.0, brfs@^1.4.1:
     version "1.5.0"
     resolved "https://registry.yarnpkg.com/brfs/-/brfs-1.5.0.tgz#a3822ed7a65723e056f89ff4b58e8abc63658f03"
     dependencies:
@@ -2004,6 +2007,10 @@ Lockfile:
       define-property "^0.2.5"
       isobject "^3.0.0"
       static-extend "^0.1.1"
+  
+  classnames@^2.2.5:
+    version "2.2.5"
+    resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
   
   clean-yaml-object@^0.1.0:
     version "0.1.0"
@@ -3354,6 +3361,10 @@ Lockfile:
     dependencies:
       md5.js "^1.3.4"
       safe-buffer "^5.1.1"
+  
+  example-cities@0.0.0:
+    version "0.0.0"
+    resolved "https://registry.yarnpkg.com/example-cities/-/example-cities-0.0.0.tgz#94d07958b6f288c8deaa1a1161094f911454c00a"
   
   execa@^0.7.0:
     version "0.7.0"
@@ -5013,6 +5024,10 @@ Lockfile:
   jsx-ast-utils@^1.0.0, jsx-ast-utils@^1.2.1:
     version "1.4.1"
     resolved "https://registry.yarnpkg.com/jsx-ast-utils/-/jsx-ast-utils-1.4.1.tgz#3867213e8dd79bf1e8f2300c0cfc1efb182c0df1"
+  
+  just-omit@^1.0.1:
+    version "1.0.1"
+    resolved "https://registry.yarnpkg.com/just-omit/-/just-omit-1.0.1.tgz#0109882a2a11323d59034be805ee978b5b8999a4"
   
   kareem@1.5.0:
     version "1.5.0"
@@ -7254,7 +7269,7 @@ Lockfile:
     dependencies:
       asap "~2.0.3"
   
-  prop-types@^15.0.0, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.7, prop-types@^15.5.8:
+  prop-types@^15.0.0, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.7, prop-types@^15.5.8, prop-types@^15.6.0:
     version "15.6.1"
     resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.1.tgz#36644453564255ddda391191fb3a125cbdf654ca"
     dependencies:
@@ -7380,6 +7395,14 @@ Lockfile:
       minimist "^1.1.3"
       through2 "^2.0.0"
   
+  r-dom@^2.4.0:
+    version "2.4.0"
+    resolved "https://registry.yarnpkg.com/r-dom/-/r-dom-2.4.0.tgz#ee705294fe82bf5419ade0be3f0ef9a970552e8c"
+    dependencies:
+      classnames "^2.2.5"
+      just-omit "^1.0.1"
+      react-dom-factories "^1.0.2"
+  
   randomatic@^1.1.3:
     version "1.1.7"
     resolved "https://registry.yarnpkg.com/randomatic/-/randomatic-1.1.7.tgz#c7abe9cc8b87c0baa876b19fde83fd464797e38c"
@@ -7450,6 +7473,10 @@ Lockfile:
       lodash.debounce "^3.1.1"
       prop-types "^15.5.8"
   
+  react-dom-factories@^1.0.2:
+    version "1.0.2"
+    resolved "https://registry.yarnpkg.com/react-dom-factories/-/react-dom-factories-1.0.2.tgz#eb7705c4db36fb501b3aa38ff759616aa0ff96e0"
+  
   react-dom@^15.1.0:
     version "15.6.2"
     resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.6.2.tgz#41cfadf693b757faf2708443a1d1fd5a02bef730"
@@ -7485,9 +7512,22 @@ Lockfile:
       prop-types "^15.5.8"
       react-base16-styling "^0.5.1"
   
-  react-map-gl@^3.2.4:
-    version "3.2.4"
-    resolved "https://registry.yarnpkg.com/react-map-gl/-/react-map-gl-3.2.4.tgz#5e384c49e9b1a9adaf6553661816fa0a6400fdd7"
+  react-map-gl-heatmap-overlay@^1.1.4:
+    version "1.1.4"
+    resolved "https://registry.yarnpkg.com/react-map-gl-heatmap-overlay/-/react-map-gl-heatmap-overlay-1.1.4.tgz#c0e52556bc9efee7c92e77b24ae17ff15c53c1c5"
+    dependencies:
+      create-react-class "^15.6.0"
+      example-cities "0.0.0"
+      global "^4.3.0"
+      object-assign "^4.0.1"
+      prop-types "^15.6.0"
+      scale-color-perceptual "^1.1.2"
+      viewport-mercator-project "^2.0.1"
+      webgl-heatmap "^0.2.0"
+  
+  react-map-gl@^3.2.5:
+    version "3.2.5"
+    resolved "https://registry.yarnpkg.com/react-map-gl/-/react-map-gl-3.2.5.tgz#4d9b274775f64163e898bdc63a45d7861e13d379"
     dependencies:
       babel-runtime "^6.23.0"
       bowser "^1.2.0"
@@ -8061,6 +8101,10 @@ Lockfile:
   sax@^1.2.1, sax@~1.2.1:
     version "1.2.4"
     resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
+  
+  scale-color-perceptual@^1.1.2:
+    version "1.1.2"
+    resolved "https://registry.yarnpkg.com/scale-color-perceptual/-/scale-color-perceptual-1.1.2.tgz#370fb1aa1fc48261d3048f34edfe6155fb0a52d5"
   
   seedrandom@^2.4.2:
     version "2.4.3"
@@ -9294,9 +9338,19 @@ Lockfile:
     version "0.2.0"
     resolved "https://registry.yarnpkg.com/viewport-dimensions/-/viewport-dimensions-0.2.0.tgz#de740747db5387fd1725f5175e91bac76afdf36c"
   
+  viewport-mercator-project@^2.0.1:
+    version "2.1.0"
+    resolved "https://registry.yarnpkg.com/viewport-mercator-project/-/viewport-mercator-project-2.1.0.tgz#6ae6249d199a80ca01319cdd821d7c6b7feae792"
+  
   viewport-mercator-project@^5.0.0:
     version "5.0.0"
     resolved "https://registry.yarnpkg.com/viewport-mercator-project/-/viewport-mercator-project-5.0.0.tgz#d18709dad652581108a6dd58f320409491d40982"
+    dependencies:
+      math.gl "^1.0.0"
+  
+  viewport-mercator-project@^5.0.1:
+    version "5.0.1"
+    resolved "https://registry.yarnpkg.com/viewport-mercator-project/-/viewport-mercator-project-5.0.1.tgz#8f2fd1d265e9790577cb43449be708203966bc2d"
     dependencies:
       math.gl "^1.0.0"
   
@@ -9387,6 +9441,13 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/wbuf/-/wbuf-1.7.2.tgz#d697b99f1f59512df2751be42769c1580b5801fe"
     dependencies:
       minimalistic-assert "^1.0.0"
+  
+  webgl-heatmap@^0.2.0:
+    version "0.2.3"
+    resolved "https://registry.yarnpkg.com/webgl-heatmap/-/webgl-heatmap-0.2.3.tgz#e76832295b17e9ec57790e261cf17bb31484f3fd"
+    dependencies:
+      brfs "^1.4.1"
+      global "^4.3.0"
   
   webidl-conversions@^3.0.0:
     version "3.0.1"
@@ -9748,16 +9809,14 @@ Lockfile:
       fd-slicer "~1.0.1"
 
 Trace: 
-  Error: Command failed.
-  Exit code: 9
-  Command: sh
-  Arguments: -c cross-env NODE_ENV=test PORT=8080 MONGO_URL=mongodb://localhost:27017/weather-tweets-test node_modules/.bin/nyc node --harmony-proxies node_modules/.bin/ava
-  Directory: /Users/griffin/workspace/gis/weather-tweets
-  Output:
-  
-      at ProcessTermError.MessageError (/usr/local/lib/node_modules/yarn/lib/cli.js:186:110)
-      at new ProcessTermError (/usr/local/lib/node_modules/yarn/lib/cli.js:226:113)
-      at ChildProcess.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:30281:17)
-      at ChildProcess.emit (events.js:180:13)
-      at maybeClose (internal/child_process.js:936:16)
-      at Process.ChildProcess._handle.onexit (internal/child_process.js:220:5)
+  Error: eslint-config-plugin:ava: Invalid protocol: eslint-config-plugin:
+      at Request.module.exports.Request.init (/usr/local/lib/node_modules/yarn/lib/cli.js:132702:31)
+      at new Request (/usr/local/lib/node_modules/yarn/lib/cli.js:132372:8)
+      at request (/usr/local/lib/node_modules/yarn/lib/cli.js:129371:10)
+      at RequestManager.execute (/usr/local/lib/node_modules/yarn/lib/cli.js:65071:15)
+      at RequestManager.shiftQueue (/usr/local/lib/node_modules/yarn/lib/cli.js:65098:10)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:64849:13
+      at new Promise (<anonymous>)
+      at new F (/usr/local/lib/node_modules/yarn/lib/cli.js:23451:28)
+      at RequestManager.request (/usr/local/lib/node_modules/yarn/lib/cli.js:64847:19)
+      at NpmRegistry.request (/usr/local/lib/node_modules/yarn/lib/cli.js:31136:32)

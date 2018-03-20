@@ -13,8 +13,8 @@ export default class TweetInfo extends PureComponent {
             <img src={profileImageUrl} alt="twitter profile" />
           </div>
           <div className={styles.nameContainer}>
-            <h2><a href={`https://twitter.com/${screenName}`} target="_blank">@{screenName}</a></h2>
-            <h5>{createdAt}</h5>
+            <h3><a href={`https://twitter.com/${screenName}`} target="_blank">@{screenName}</a></h3>
+            <p>{createdAt}</p>
           </div>
         </div>
         <div className={styles.row}>
