@@ -1,5 +1,6 @@
+import Twitter from 'twitter';
 import Tweet from './models/tweet';
-const Twitter = require('twitter');
+import config from './config';
 
 const client = new Twitter({
   consumer_key: process.env.TWITTER_CONSUMER_KEY,
@@ -9,6 +10,7 @@ const client = new Twitter({
 });
 
 const WORDS = 'atmosphere, barometer, blizzard, breeze, climate, cloudy, condensation, cumulus, cyclone, dew point, disturbance, downburst, downdraft, drizzle, drought, eye wall, flash flood, flood, flurry, fog, forecast, freeze, frost, Fujita scale, funnel cloud, global warming, greenhouse effect, gust, hail, heat, humid, humidity, hurricane, hydrologic cycle, hydrosphere, ice, lake effect, lightning, meteorologist, meteorology, monsoon, overcast, ozone, permafrost, polar, precipitation, prevailing wind, radar, rain, rainbow, rain gauge, rain shadow, shower sky, sleet, smog, snow, snowfall, snowflake, snowstorm, storm, temperate, temperature, thermal, thermometer, thunder, thunderstorm, thunderstorm, warning, tstorm, t-storm, tornado, tornado warning, tropical, troposphere, trough, turbulence, typhoon, updraft, vapour, visibility, vortex, warm, water cycle, weather, weather vane, whiteout, wind, wind chill, wind chill factor'; // eslint-disable-line
+const boundingBox = config.boundingBox.toString();
 
 const isTweetGeotagged = (tweet) => {
   if (tweet.hasOwnProperty('retweeted_status')) {
@@ -44,7 +46,7 @@ const trimTweet = (tweet) => {
  * Stream statuses filtered by keyword
  * number of tweets per second depends on topic popularity
  **/
-client.stream('statuses/filter', { track: WORDS },
+client.stream('statuses/filter', { track: WORDS, locations: boundingBox },
   stream => {
     stream.on('data', data => {
       if (isTweetGeotagged(data)) {

@@ -104,9 +104,9 @@ class Mapbox extends Component {
         mapboxApiAccessToken={token}
       >
 
-        {/* {tweets.map(this._renderTweetMarker)}
+        {tweets.map(this._renderTweetMarker)}
 
-        {this._renderPopup()} */}
+        {this._renderPopup()}
 
         {/* <HeatmapOverlay locations={TWEETS} {...viewport} /> */}
 
