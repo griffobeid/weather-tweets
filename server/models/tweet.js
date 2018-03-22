@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import ttl from 'mongoose-ttl';
 const Schema = mongoose.Schema;
 
 const tweetSchema = new Schema({
@@ -14,5 +15,7 @@ const tweetSchema = new Schema({
   screenName: { type: 'String', required: true },
   dateAdded: { type: 'Date', default: Date.now, required: true },
 });
+
+tweetSchema.plugin(ttl, { ttl: '1d' });
 
 export default mongoose.model('Tweet', tweetSchema);

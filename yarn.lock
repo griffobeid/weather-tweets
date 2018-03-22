@@ -5613,6 +5613,12 @@ mongodb@2.2.34:
     mongodb-core "2.1.18"
     readable-stream "2.2.7"
 
+mongoose-ttl@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/mongoose-ttl/-/mongoose-ttl-0.0.3.tgz#4a13dcc45db0296384c6b1f225df757a53bfe0e0"
+  dependencies:
+    ms "0.1.0"
+
 mongoose@^4.4.20:
   version "4.13.11"
   resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-4.13.11.tgz#da6edf8e399054e12836016316999519a358db43"
@@ -5647,6 +5653,10 @@ mquery@2.3.3:
     debug "2.6.9"
     regexp-clone "0.0.1"
     sliced "0.0.5"
+
+ms@0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/ms/-/ms-0.1.0.tgz#f21fac490daf1d7667fd180fe9077389cc9442b2"
 
 ms@0.7.1:
   version "0.7.1"
