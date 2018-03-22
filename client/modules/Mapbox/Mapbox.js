@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import MapGL, { Marker, Popup, NavigationControl } from 'react-map-gl';
-//import HeatmapOverlay from 'react-map-gl-heatmap-overlay';
+// import HeatmapOverlay from 'react-map-gl-heatmap-overlay';
 import { defaultMapStyle } from './styles/map-style.js';
 import TweetMarker from '../Tweet/TweetMarker';
 import TweetInfo from '../Tweet/TweetInfo';
@@ -94,7 +94,7 @@ class Mapbox extends Component {
   render() {
     const { viewport, mapStyle } = this.state;
     const { token, tweets } = this.props;
-    const TWEETS = tweets.map(tweet => { return { longitude: tweet.longitude, latitude: tweet.latitude }; });
+    // const TWEETS = tweets.map(tweet => { return { longitude: tweet.longitude, latitude: tweet.latitude }; });
 
     return (
       <MapGL

@@ -9,15 +9,29 @@ const client = new Twitter({
   access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET,
 });
 
-const WORDS = 'atmosphere, barometer, blizzard, breeze, climate, cloudy, condensation, cumulus, cyclone, dew point, disturbance, downburst, downdraft, drizzle, drought, eye wall, flash flood, flood, flurry, fog, forecast, freeze, frost, Fujita scale, funnel cloud, global warming, greenhouse effect, gust, hail, heat, humid, humidity, hurricane, hydrologic cycle, hydrosphere, ice, lake effect, lightning, meteorologist, meteorology, monsoon, overcast, ozone, permafrost, polar, precipitation, prevailing wind, radar, rain, rainbow, rain gauge, rain shadow, shower sky, sleet, smog, snow, snowfall, snowflake, snowstorm, storm, temperate, temperature, thermal, thermometer, thunder, thunderstorm, thunderstorm, warning, tstorm, t-storm, tornado, tornado warning, tropical, troposphere, trough, turbulence, typhoon, updraft, vapour, visibility, vortex, warm, water cycle, weather, weather vane, whiteout, wind, wind chill, wind chill factor'; // eslint-disable-line
-const boundingBox = config.boundingBox.toString();
+const WORDS = 'atmosphere, barometer, blizzard, breeze, climate, cloudy, condensation, cumulus, dew point, disturbance, downburst, downdraft, drizzle, drought, flash flood, flood, flurry, fog, forecast, freeze, frost, funnel cloud, global warming, greenhouse effect, gust, hail, heat, humid, humidity, hurricane, hydrologic cycle, hydrosphere, ice, lake effect, lightning, meteorologist, meteorology, monsoon, overcast, ozone, permafrost, polar, precipitation, prevailing wind, radar, rain, rainbow, shower sky, sleet, smog, snow, snowfall, snowflake, snowstorm, storm, temperate, temperature, thermal, thunder, thunderstorm, warning, tstorm, t-storm, tornado, tornado warning, tropical, troposphere, turbulence, updraft, visibility, vortex, warm, weather, whiteout, wind, wind chill, wind chill factor'; // eslint-disable-line
+const boundingBox = config.boundingBox;
+
+const isTweetInBoundingBox = (tweet) => {
+  const coords = tweet.coordinates.coordinates;
+  const southWest = boundingBox[0];
+  const northEast = boundingBox[1];
+  // test longitude
+  if (southWest[0] <= coords[0] && northEast[0] >= coords[0]) {
+    // test latitude
+    if (southWest[1] <= coords[1] && northEast[1] >= coords[1]) {
+      return true;
+    }
+  }
+  return false;
+};
 
 const isTweetGeotagged = (tweet) => {
   if (tweet.hasOwnProperty('retweeted_status')) {
     return false;
   }
-  if (tweet.hasOwnProperty('coordinates')) {
-    if (tweet.coordinates !== null) {
+  if (tweet.hasOwnProperty('coordinates') && tweet.coordinates !== null) {
+    if (isTweetInBoundingBox(tweet)) {
       return true;
     }
   }
@@ -46,7 +60,7 @@ const trimTweet = (tweet) => {
  * Stream statuses filtered by keyword
  * number of tweets per second depends on topic popularity
  **/
-client.stream('statuses/filter', { track: WORDS, locations: boundingBox },
+client.stream('statuses/filter', { track: WORDS, locations: boundingBox.toString() },
   stream => {
     stream.on('data', data => {
       if (isTweetGeotagged(data)) {

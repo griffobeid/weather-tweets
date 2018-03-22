@@ -53,7 +53,7 @@ mongoose.connect(serverConfig.mongoURL, (error) => {
   // start the tweet stream
   try {
     tweetStream();
-    console.log('Twitter API Stream started.'); // eslint-disable-line no-con
+    console.log('Twitter API Stream started.'); // eslint-disable-line no-console
   } catch (err) {
     throw err;
   }
@@ -147,9 +147,6 @@ app.use((req, res, next) => {
       .catch((error) => next(error));
   });
 });
-
-// Create a window object if undefined
-//if (typeof(window) === 'undefined') global.window = {};
 
 // start app
 app.listen(serverConfig.port, (error) => {
