@@ -53,7 +53,6 @@ mongoose.connect(serverConfig.mongoURL, (error) => {
   // start the tweet stream
   try {
     tweetStream();
-    console.log('Twitter API Stream started.'); // eslint-disable-line no-console
   } catch (err) {
     throw err;
   }

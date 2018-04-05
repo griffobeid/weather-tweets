@@ -41,6 +41,7 @@
     "cross-env": "^1.0.8",
     "eventsource-polyfill": "^0.9.6",
     "express": "^4.13.4",
+    "heatmap.js": "^2.0.5",
     "immutable": "^3.8.2",
     "isomorphic-fetch": "^2.2.1",
     "mapbox-gl": "^0.44.1",
@@ -57,7 +58,7 @@
     "redux": "^3.5.2",
     "redux-thunk": "^2.1.0",
     "sanitize-html": "^1.11.4",
-    "twitter": "^1.7.1"
+    "twitter-lite": "^0.5.0"
   },
   "devDependencies": {
     "ava": "^0.15.2",

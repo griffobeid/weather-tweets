@@ -39,16 +39,16 @@ class Mapbox extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('resize', this._resize);
-    this._resize();
+    window.addEventListener('resize', this.resize);
+    this.resize();
     this.props.dispatch(fetchTweets());
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this._resize);
+    window.removeEventListener('resize', this.resize);
   }
 
-  _resize = () => {
+  resize = () => {
     this.setState({
       viewport: {
         ...this.state.viewport,
@@ -58,11 +58,11 @@ class Mapbox extends Component {
     });
   };
 
-  _updateViewport = (viewport) => {
+  updateViewport = (viewport) => {
     this.setState({ viewport });
   }
 
-  _renderTweetMarker = (tweet, index) => {
+  renderTweetMarker = (tweet, index) => {
     return (
       <Marker
         key={`marker-${index}`}
@@ -74,8 +74,7 @@ class Mapbox extends Component {
     );
   }
 
-
-  _renderPopup() {
+  renderPopup() {
     const { popupInfo } = this.state;
 
     return popupInfo && (
@@ -100,18 +99,18 @@ class Mapbox extends Component {
       <MapGL
         {...viewport}
         mapStyle={mapStyle}
-        onViewportChange={this._updateViewport}
+        onViewportChange={this.updateViewport}
         mapboxApiAccessToken={token}
       >
 
-        {tweets.map(this._renderTweetMarker)}
+        {/* {tweets.map(this.renderTweetMarker)}
 
-        {this._renderPopup()}
+        {this.renderPopup()} */}
 
         {/* <HeatmapOverlay locations={TWEETS} {...viewport} /> */}
 
         <div className="nav" style={navStyle}>
-          <NavigationControl onViewportChange={this._updateViewport} />
+          <NavigationControl onViewportChange={this.updateViewport} />
         </div>
 
       </MapGL>
