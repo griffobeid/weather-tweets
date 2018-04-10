@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 // Import Components
 import Helmet from 'react-helmet';
-import Mapbox from '../Mapbox/Mapbox.js';
+import GoogleMap from '../GoogleMap/GoogleMap';
 // import DevTools from './components/DevTools';
 
 export class App extends Component {
@@ -37,7 +37,7 @@ export class App extends Component {
               },
             ]}
           />
-          <Mapbox token="pk.eyJ1IjoiZ29iZWlkIiwiYSI6ImNqY2plOTY3cjNjZGEzNG1tYTBhNDR4ODcifQ.Gk_662sQu4i6GmshCbCQ8Q" />
+          <GoogleMap />
         </div>
       </div>
     );

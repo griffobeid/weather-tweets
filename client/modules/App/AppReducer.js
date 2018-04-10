@@ -9,7 +9,5 @@ const AppReducer = (state = initialState, action) => {
   }
 };
 
-export const getMapboxToken = state => state.token;
-
 // Export Reducer
 export default AppReducer;

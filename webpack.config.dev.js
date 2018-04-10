@@ -37,9 +37,6 @@ module.exports = {
       'client',
       'node_modules',
     ],
-    alias: {
-      'mapbox-gl$': path.resolve('./node_modules/mapbox-gl/dist/mapbox-gl.js')
-    },
   },
 
   module: {
@@ -82,9 +79,6 @@ module.exports = {
         CLIENT: JSON.stringify(true),
         'NODE_ENV': JSON.stringify('development'),
       }
-    }),
-    new webpack.EnvironmentPlugin({
-      'MapboxAccessToken': process.env.MAPBOX_TOKEN
     }),
   ],
 

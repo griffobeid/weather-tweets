@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/Cellar/node/9.8.0/bin/node /usr/local/bin/yarn remove heatmap
+  /usr/local/Cellar/node/9.8.0/bin/node /usr/local/bin/yarn remove ify-laoder
 
 PATH: 
   /usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
@@ -57,17 +57,15 @@ npm manifest:
       "cross-env": "^1.0.8",
       "eventsource-polyfill": "^0.9.6",
       "express": "^4.13.4",
+      "google-map-react": "^0.34.0",
       "immutable": "^3.8.2",
       "isomorphic-fetch": "^2.2.1",
-      "mapbox-gl": "^0.44.1",
       "mongoose": "^4.4.20",
       "mongoose-ttl": "^0.0.3",
       "r-dom": "^2.4.0",
       "react": "^15.1.0",
       "react-dom": "^15.1.0",
       "react-helmet": "^3.1.0",
-      "react-map-gl": "^3.2.5",
-      "react-map-gl-heatmap-overlay": "^1.1.4",
       "react-redux": "^4.4.5",
       "react-router": "^2.4.1",
       "redux": "^3.5.2",
@@ -108,7 +106,6 @@ npm manifest:
       "mockgoose": "^6.0.3",
       "nock": "^8.0.0",
       "nodemon": "^1.9.2",
-      "null-loader": "^0.1.1",
       "nyc": "^6.4.4",
       "postcss-cssnext": "^2.6.0",
       "postcss-focus": "^1.0.0",
@@ -177,49 +174,9 @@ Lockfile:
   # yarn lockfile v1
   
   
-  "@mapbox/geojson-area@0.2.2":
-    version "0.2.2"
-    resolved "https://registry.yarnpkg.com/@mapbox/geojson-area/-/geojson-area-0.2.2.tgz#18d7814aa36bf23fbbcc379f8e26a22927debf10"
-    dependencies:
-      wgs84 "0.0.0"
-  
-  "@mapbox/gl-matrix@^0.0.1":
-    version "0.0.1"
-    resolved "https://registry.yarnpkg.com/@mapbox/gl-matrix/-/gl-matrix-0.0.1.tgz#e5126aab4d64c36b81c7a97d0ae0dddde5773d2b"
-  
-  "@mapbox/mapbox-gl-supported@^1.3.0":
-    version "1.3.0"
-    resolved "https://registry.yarnpkg.com/@mapbox/mapbox-gl-supported/-/mapbox-gl-supported-1.3.0.tgz#89daee16845400ea1c76e084bdfab2971e552a9c"
-  
-  "@mapbox/point-geometry@0.1.0", "@mapbox/point-geometry@^0.1.0", "@mapbox/point-geometry@~0.1.0":
+  "@mapbox/point-geometry@^0.1.0":
     version "0.1.0"
     resolved "https://registry.yarnpkg.com/@mapbox/point-geometry/-/point-geometry-0.1.0.tgz#8a83f9335c7860effa2eeeca254332aa0aeed8f2"
-  
-  "@mapbox/shelf-pack@^3.1.0":
-    version "3.1.0"
-    resolved "https://registry.yarnpkg.com/@mapbox/shelf-pack/-/shelf-pack-3.1.0.tgz#1edea9c0bf6715b217171ba60646c201af520f6a"
-  
-  "@mapbox/tiny-sdf@^1.1.0":
-    version "1.1.0"
-    resolved "https://registry.yarnpkg.com/@mapbox/tiny-sdf/-/tiny-sdf-1.1.0.tgz#b0b8f5c22005e6ddb838f421ffd257c1f74f9a20"
-  
-  "@mapbox/unitbezier@^0.0.0":
-    version "0.0.0"
-    resolved "https://registry.yarnpkg.com/@mapbox/unitbezier/-/unitbezier-0.0.0.tgz#15651bd553a67b8581fb398810c98ad86a34524e"
-  
-  "@mapbox/vector-tile@^1.3.0":
-    version "1.3.0"
-    resolved "https://registry.yarnpkg.com/@mapbox/vector-tile/-/vector-tile-1.3.0.tgz#c495f972525befccefcd838f45ffa37ef3b70fe8"
-    dependencies:
-      "@mapbox/point-geometry" "~0.1.0"
-  
-  "@mapbox/whoots-js@^3.0.0":
-    version "3.0.0"
-    resolved "https://registry.yarnpkg.com/@mapbox/whoots-js/-/whoots-js-3.0.0.tgz#c1de4293081424da3ac30c23afa850af1019bb54"
-  
-  "JSV@>= 4.0.x":
-    version "4.0.2"
-    resolved "https://registry.yarnpkg.com/JSV/-/JSV-4.0.2.tgz#d077f6825571f82132f9dffaed587b4029feff57"
   
   abab@^1.0.3:
     version "1.0.4"
@@ -250,19 +207,13 @@ Lockfile:
     dependencies:
       acorn "^4.0.4"
   
-  acorn-jsx@^3.0.0, acorn-jsx@^3.0.1:
+  acorn-jsx@^3.0.0:
     version "3.0.1"
     resolved "https://registry.yarnpkg.com/acorn-jsx/-/acorn-jsx-3.0.1.tgz#afdf9488fb1ecefc8348f6fb22f464e32a58b36b"
     dependencies:
       acorn "^3.0.4"
   
-  acorn-object-spread@^1.0.0:
-    version "1.0.0"
-    resolved "https://registry.yarnpkg.com/acorn-object-spread/-/acorn-object-spread-1.0.0.tgz#48ead0f4a8eb16995a17a0db9ffc6acaada4ba68"
-    dependencies:
-      acorn "^3.1.0"
-  
-  acorn@^3.0.0, acorn@^3.0.4, acorn@^3.1.0, acorn@^3.3.0:
+  acorn@^3.0.0, acorn@^3.0.4:
     version "3.3.0"
     resolved "https://registry.yarnpkg.com/acorn/-/acorn-3.3.0.tgz#45e37fb39e8da3f25baee3ff5369e2bb5f22017a"
   
@@ -270,7 +221,7 @@ Lockfile:
     version "4.0.13"
     resolved "https://registry.yarnpkg.com/acorn/-/acorn-4.0.13.tgz#105495ae5361d697bd195c825192e1ad7f253787"
   
-  acorn@^5.0.0, acorn@^5.1.0, acorn@^5.4.0:
+  acorn@^5.4.0:
     version "5.5.0"
     resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.5.0.tgz#1abb587fbf051f94e3de20e6b26ef910b1828298"
   
@@ -1382,7 +1333,7 @@ Lockfile:
       mkdirp "^0.5.1"
       source-map-support "^0.4.15"
   
-  babel-runtime@^6.18.0, babel-runtime@^6.2.0, babel-runtime@^6.22.0, babel-runtime@^6.23.0, babel-runtime@^6.26.0, babel-runtime@^6.3.19, babel-runtime@^6.6.1:
+  babel-runtime@^6.18.0, babel-runtime@^6.2.0, babel-runtime@^6.22.0, babel-runtime@^6.26.0, babel-runtime@^6.3.19, babel-runtime@^6.6.1:
     version "6.26.0"
     resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
     dependencies:
@@ -1422,7 +1373,7 @@ Lockfile:
       lodash "^4.17.4"
       to-fast-properties "^1.0.3"
   
-  babylon@^6.0.18, babylon@^6.1.0, babylon@^6.15.0, babylon@^6.18.0, babylon@^6.3.26:
+  babylon@^6.0.18, babylon@^6.1.0, babylon@^6.18.0, babylon@^6.3.26:
     version "6.18.0"
     resolved "https://registry.yarnpkg.com/babylon/-/babylon-6.18.0.tgz#af2f3b88fa6f5c1e4c634d1a0f8eac4f55b395e3"
   
@@ -1552,10 +1503,6 @@ Lockfile:
     dependencies:
       hoek "4.x.x"
   
-  bowser@^1.2.0:
-    version "1.9.2"
-    resolved "https://registry.yarnpkg.com/bowser/-/bowser-1.9.2.tgz#d66fc868ca5f4ba895bee1363c343fe7b37d3394"
-  
   boxen@^0.5.1:
     version "0.5.1"
     resolved "https://registry.yarnpkg.com/boxen/-/boxen-0.5.1.tgz#5b73d8840eb7f3c8a155cbf69ed3ed68d4720014"
@@ -1613,15 +1560,6 @@ Lockfile:
       split-string "^3.0.2"
       to-regex "^3.0.1"
   
-  brfs@^1.4.0, brfs@^1.4.1:
-    version "1.5.0"
-    resolved "https://registry.yarnpkg.com/brfs/-/brfs-1.5.0.tgz#a3822ed7a65723e056f89ff4b58e8abc63658f03"
-    dependencies:
-      quote-stream "^1.0.1"
-      resolve "^1.1.5"
-      static-module "^2.2.0"
-      through2 "^2.0.0"
-  
   brorand@^1.0.1:
     version "1.1.0"
     resolved "https://registry.yarnpkg.com/brorand/-/brorand-1.1.0.tgz#12c25efe40a45e3c323eb8675a0a0ce57b22371f"
@@ -1652,10 +1590,6 @@ Lockfile:
       cipher-base "^1.0.1"
       des.js "^1.0.0"
       inherits "^2.0.1"
-  
-  browserify-package-json@^1.0.0:
-    version "1.0.1"
-    resolved "https://registry.yarnpkg.com/browserify-package-json/-/browserify-package-json-1.0.1.tgz#98dde8aa5c561fd6d3fe49bbaa102b74b396fdea"
   
   browserify-rsa@^4.0.0:
     version "4.0.1"
@@ -1693,25 +1627,6 @@ Lockfile:
     version "1.0.5"
     resolved "https://registry.yarnpkg.com/bson/-/bson-1.0.5.tgz#34563b73ff1fde9387c1b9fb5afd845ecc4ba623"
   
-  buble@^0.15.1:
-    version "0.15.2"
-    resolved "https://registry.yarnpkg.com/buble/-/buble-0.15.2.tgz#547fc47483f8e5e8176d82aa5ebccb183b02d613"
-    dependencies:
-      acorn "^3.3.0"
-      acorn-jsx "^3.0.1"
-      acorn-object-spread "^1.0.0"
-      chalk "^1.1.3"
-      magic-string "^0.14.0"
-      minimist "^1.2.0"
-      os-homedir "^1.0.1"
-  
-  bubleify@^0.7.0:
-    version "0.7.0"
-    resolved "https://registry.yarnpkg.com/bubleify/-/bubleify-0.7.0.tgz#d08ea642ffd085ff8711c8843f57072f0d5eb8f6"
-    dependencies:
-      buble "^0.15.1"
-      object-assign "^4.0.1"
-  
   buf-compare@^1.0.0:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/buf-compare/-/buf-compare-1.0.1.tgz#fef28da8b8113a0a0db4430b0b6467b69730b34a"
@@ -1719,10 +1634,6 @@ Lockfile:
   buffer-crc32@~0.2.3:
     version "0.2.13"
     resolved "https://registry.yarnpkg.com/buffer-crc32/-/buffer-crc32-0.2.13.tgz#0d333e3f00eac50aa1454abd30ef8c2a5d9a7242"
-  
-  buffer-equal@0.0.1:
-    version "0.0.1"
-    resolved "https://registry.yarnpkg.com/buffer-equal/-/buffer-equal-0.0.1.tgz#91bc74b11ea405bc916bc6aa908faafa5b4aac4b"
   
   buffer-equals@^1.0.3:
     version "1.0.4"
@@ -1791,7 +1702,7 @@ Lockfile:
       mkdirp "^0.5.1"
       write-file-atomic "^1.1.4"
   
-  call-matcher@^1.0.0, call-matcher@^1.0.1:
+  call-matcher@^1.0.0:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/call-matcher/-/call-matcher-1.0.1.tgz#5134d077984f712a54dad3cbf62de28dce416ca8"
     dependencies:
@@ -1877,7 +1788,7 @@ Lockfile:
       deep-eql "^0.1.3"
       type-detect "^1.0.0"
   
-  chalk@^0.4.0, chalk@~0.4.0:
+  chalk@^0.4.0:
     version "0.4.0"
     resolved "https://registry.yarnpkg.com/chalk/-/chalk-0.4.0.tgz#5199a3ddcd0c1efe23bc08c1b027b06176e0c64f"
     dependencies:
@@ -2198,7 +2109,7 @@ Lockfile:
     version "0.0.1"
     resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
   
-  concat-stream@^1.4.6, concat-stream@^1.4.7, concat-stream@~1.6.0:
+  concat-stream@^1.4.6, concat-stream@^1.4.7:
     version "1.6.1"
     resolved "https://registry.yarnpkg.com/concat-stream/-/concat-stream-1.6.1.tgz#261b8f518301f1d834e36342b9fea095d2620a26"
     dependencies:
@@ -2265,7 +2176,7 @@ Lockfile:
     version "1.0.4"
     resolved "https://registry.yarnpkg.com/content-type/-/content-type-1.0.4.tgz#e138cc75e040c727b1966fe5e5f8c9aee256fe3b"
   
-  convert-source-map@^1.1.1, convert-source-map@^1.1.2, convert-source-map@^1.2.0, convert-source-map@^1.5.0, convert-source-map@^1.5.1:
+  convert-source-map@^1.1.1, convert-source-map@^1.1.2, convert-source-map@^1.2.0, convert-source-map@^1.5.0:
     version "1.5.1"
     resolved "https://registry.yarnpkg.com/convert-source-map/-/convert-source-map-1.5.1.tgz#b8278097b9bc229365de5c62cf5fcaed8b5599e5"
   
@@ -2498,10 +2409,6 @@ Lockfile:
   css-what@2.1:
     version "2.1.0"
     resolved "https://registry.yarnpkg.com/css-what/-/css-what-2.1.0.tgz#9467d032c38cfaefb9f2d79501253062f87fa1bd"
-  
-  csscolorparser@~1.0.2:
-    version "1.0.3"
-    resolved "https://registry.yarnpkg.com/csscolorparser/-/csscolorparser-1.0.3.tgz#b34f391eea4da8f3e98231e2ccd8df9c041f171b"
   
   cssesc@^0.1.0:
     version "0.1.0"
@@ -2899,7 +2806,7 @@ Lockfile:
     dependencies:
       is-obj "^1.0.0"
   
-  duplexer2@^0.1.2, duplexer2@^0.1.4, duplexer2@~0.1.0, duplexer2@~0.1.4:
+  duplexer2@^0.1.2, duplexer2@^0.1.4, duplexer2@~0.1.0:
     version "0.1.4"
     resolved "https://registry.yarnpkg.com/duplexer2/-/duplexer2-0.1.4.tgz#8b12dab878c0d69e3e7891051662a32fc6bddcc1"
     dependencies:
@@ -2921,10 +2828,6 @@ Lockfile:
       inherits "^2.0.1"
       readable-stream "^2.0.0"
       stream-shift "^1.0.0"
-  
-  earcut@^2.1.3:
-    version "2.1.3"
-    resolved "https://registry.yarnpkg.com/earcut/-/earcut-2.1.3.tgz#ca579545f351941af7c3d0df49c9f7d34af99b0c"
   
   eastasianwidth@^0.1.1:
     version "0.1.1"
@@ -3123,7 +3026,7 @@ Lockfile:
     optionalDependencies:
       source-map "~0.2.0"
   
-  escodegen@^1.6.1, escodegen@^1.8.1, escodegen@~1.9.0:
+  escodegen@^1.6.1:
     version "1.9.1"
     resolved "https://registry.yarnpkg.com/escodegen/-/escodegen-1.9.1.tgz#dbae17ef96c8e4bedb1356f4504fa4cc2f7cb7e2"
     dependencies:
@@ -3276,7 +3179,7 @@ Lockfile:
     version "4.0.0"
     resolved "https://registry.yarnpkg.com/esprima/-/esprima-4.0.0.tgz#4499eddcd1110e0b218bacf2fa7f7f59f55ca804"
   
-  espurify@^1.3.0, espurify@^1.5.0, espurify@^1.6.0:
+  espurify@^1.5.0, espurify@^1.6.0:
     version "1.7.0"
     resolved "https://registry.yarnpkg.com/espurify/-/espurify-1.7.0.tgz#1c5cf6cbccc32e6f639380bd4f991fab9ba9d226"
     dependencies:
@@ -3323,7 +3226,7 @@ Lockfile:
       stream-combiner "~0.0.4"
       through "~2.3.1"
   
-  eventemitter3@1.x.x:
+  eventemitter3@1.x.x, eventemitter3@^1.1.0:
     version "1.2.0"
     resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-1.2.0.tgz#1c86991d816ad1e504750e73874224ecf3bec508"
   
@@ -3347,10 +3250,6 @@ Lockfile:
     dependencies:
       md5.js "^1.3.4"
       safe-buffer "^5.1.1"
-  
-  example-cities@0.0.0:
-    version "0.0.0"
-    resolved "https://registry.yarnpkg.com/example-cities/-/example-cities-0.0.0.tgz#94d07958b6f288c8deaa1a1161094f911454c00a"
   
   execa@^0.7.0:
     version "0.7.0"
@@ -3483,15 +3382,6 @@ Lockfile:
     version "1.4.0"
     resolved "https://registry.yarnpkg.com/extsprintf/-/extsprintf-1.4.0.tgz#e2689f8f356fad62cca65a3a91c5df5f9551692f"
   
-  falafel@^2.1.0:
-    version "2.1.0"
-    resolved "https://registry.yarnpkg.com/falafel/-/falafel-2.1.0.tgz#96bb17761daba94f46d001738b3cedf3a67fe06c"
-    dependencies:
-      acorn "^5.0.0"
-      foreach "^2.0.5"
-      isarray "0.0.1"
-      object-keys "^1.0.6"
-  
   fast-deep-equal@^1.0.0:
     version "1.1.0"
     resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-1.1.0.tgz#c053477817c86b51daa853c81e059b733d023614"
@@ -3520,7 +3410,7 @@ Lockfile:
     dependencies:
       websocket-driver ">=0.5.1"
   
-  fbjs@^0.8.16, fbjs@^0.8.9:
+  fbjs@^0.8.16, fbjs@^0.8.3, fbjs@^0.8.9:
     version "0.8.16"
     resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.16.tgz#5e67432f550dc41b572bf55847b8aca64e5337db"
     dependencies:
@@ -3645,13 +3535,6 @@ Lockfile:
   flatten@^1.0.2:
     version "1.0.2"
     resolved "https://registry.yarnpkg.com/flatten/-/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
-  
-  flow-remove-types@^1.1.2:
-    version "1.2.3"
-    resolved "https://registry.yarnpkg.com/flow-remove-types/-/flow-remove-types-1.2.3.tgz#6131aefc7da43364bb8b479758c9dec7735d1a18"
-    dependencies:
-      babylon "^6.15.0"
-      vlq "^0.2.1"
   
   fn-name@^2.0.0:
     version "2.0.1"
@@ -3814,18 +3697,6 @@ Lockfile:
     dependencies:
       loader-utils "^0.2.16"
   
-  geojson-rewind@^0.3.0:
-    version "0.3.0"
-    resolved "https://registry.yarnpkg.com/geojson-rewind/-/geojson-rewind-0.3.0.tgz#d5c35025fa708910e2da1a97fc23a2e2478a876a"
-    dependencies:
-      "@mapbox/geojson-area" "0.2.2"
-      concat-stream "~1.6.0"
-      minimist "1.2.0"
-  
-  geojson-vt@^3.0.0:
-    version "3.0.0"
-    resolved "https://registry.yarnpkg.com/geojson-vt/-/geojson-vt-3.0.0.tgz#a24cae5488ab4897e86ca0e4bf0d9760d628ae0a"
-  
   get-caller-file@^1.0.1:
     version "1.0.2"
     resolved "https://registry.yarnpkg.com/get-caller-file/-/get-caller-file-1.0.2.tgz#f702e63127e7e231c160a80c1554acb70d5047e5"
@@ -3853,34 +3724,6 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/getpass/-/getpass-0.1.7.tgz#5eff8e3e684d569ae4cb2b1282604e8ba62149fa"
     dependencies:
       assert-plus "^1.0.0"
-  
-  gl-mat3@^1.0.0:
-    version "1.0.0"
-    resolved "https://registry.yarnpkg.com/gl-mat3/-/gl-mat3-1.0.0.tgz#89633219ca429379a16b9185d95d41713453b912"
-  
-  gl-mat4@^1.1.4:
-    version "1.1.4"
-    resolved "https://registry.yarnpkg.com/gl-mat4/-/gl-mat4-1.1.4.tgz#1e895b55892e56a896867abd837d38f37a178086"
-  
-  gl-quat@^1.0.0:
-    version "1.0.0"
-    resolved "https://registry.yarnpkg.com/gl-quat/-/gl-quat-1.0.0.tgz#0945ec923386f45329be5dc357b1c8c2d47586c5"
-    dependencies:
-      gl-mat3 "^1.0.0"
-      gl-vec3 "^1.0.3"
-      gl-vec4 "^1.0.0"
-  
-  gl-vec2@^1.0.0:
-    version "1.2.0"
-    resolved "https://registry.yarnpkg.com/gl-vec2/-/gl-vec2-1.2.0.tgz#b0af95d2a582e3ad818446a1800093fc60b8b212"
-  
-  gl-vec3@^1.0.3:
-    version "1.0.3"
-    resolved "https://registry.yarnpkg.com/gl-vec3/-/gl-vec3-1.0.3.tgz#110fd897d0729f6398307381567d0944941bf22b"
-  
-  gl-vec4@^1.0.0, gl-vec4@^1.0.1:
-    version "1.0.1"
-    resolved "https://registry.yarnpkg.com/gl-vec4/-/gl-vec4-1.0.1.tgz#97d96878281b14b532cbce101785dfd1cb340964"
   
   glob-base@^0.3.0:
     version "0.3.0"
@@ -3999,6 +3842,15 @@ Lockfile:
       pify "^2.0.0"
       pinkie-promise "^2.0.0"
   
+  google-map-react@^0.34.0:
+    version "0.34.0"
+    resolved "https://registry.yarnpkg.com/google-map-react/-/google-map-react-0.34.0.tgz#c645f8b9a7b3b030547dae2964ff79fc00a402b3"
+    dependencies:
+      "@mapbox/point-geometry" "^0.1.0"
+      eventemitter3 "^1.1.0"
+      fbjs "^0.8.3"
+      scriptjs "^2.5.7"
+  
   got@^5.0.0:
     version "5.7.1"
     resolved "https://registry.yarnpkg.com/got/-/got-5.7.1.tgz#5f81635a61e4a6589f180569ea4e381680a51f35"
@@ -4043,19 +3895,6 @@ Lockfile:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/graceful-readlink/-/graceful-readlink-1.0.1.tgz#4cafad76bc62f02fa039b2f94e9a3dd3a391a725"
   
-  gray-matter@^3.0.8:
-    version "3.1.1"
-    resolved "https://registry.yarnpkg.com/gray-matter/-/gray-matter-3.1.1.tgz#101f80d9e69eeca6765cdce437705b18f40876ac"
-    dependencies:
-      extend-shallow "^2.0.1"
-      js-yaml "^3.10.0"
-      kind-of "^5.0.2"
-      strip-bom-string "^1.0.0"
-  
-  grid-index@^1.0.0:
-    version "1.0.0"
-    resolved "https://registry.yarnpkg.com/grid-index/-/grid-index-1.0.0.tgz#ad2c5d54ce5b35437faff1d70a9aeb3d1d261110"
-  
   gulp-sourcemaps@1.6.0:
     version "1.6.0"
     resolved "https://registry.yarnpkg.com/gulp-sourcemaps/-/gulp-sourcemaps-1.6.0.tgz#b86ff349d801ceb56e1d9e7dc7bbcb4b7dee600c"
@@ -4065,10 +3904,6 @@ Lockfile:
       strip-bom "^2.0.0"
       through2 "^2.0.0"
       vinyl "^1.0.0"
-  
-  hammerjs@^2.0.8:
-    version "2.0.8"
-    resolved "https://registry.yarnpkg.com/hammerjs/-/hammerjs-2.0.8.tgz#04ef77862cff2bb79d30f7692095930222bf60f1"
   
   handle-thing@^1.2.5:
     version "1.2.5"
@@ -4373,7 +4208,7 @@ Lockfile:
     dependencies:
       postcss "^6.0.2"
   
-  ieee754@^1.1.4, ieee754@^1.1.6:
+  ieee754@^1.1.4:
     version "1.1.8"
     resolved "https://registry.yarnpkg.com/ieee754/-/ieee754-1.1.8.tgz#be33d40ac10ef1926701f6f08a2d86fbfd1ad3e4"
   
@@ -4907,7 +4742,7 @@ Lockfile:
       argparse "^1.0.7"
       esprima "^2.6.0"
   
-  js-yaml@3.x, js-yaml@^3.10.0, js-yaml@^3.5.1:
+  js-yaml@3.x, js-yaml@^3.5.1:
     version "3.10.0"
     resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.10.0.tgz#2e78441646bd4682e963f22b6e92823c309c62dc"
     dependencies:
@@ -5001,13 +4836,6 @@ Lockfile:
     version "0.0.0"
     resolved "https://registry.yarnpkg.com/jsonify/-/jsonify-0.0.0.tgz#2c74b6ee41d93ca51b7b5aaee8f503631d252a73"
   
-  jsonlint-lines-primitives@~1.6.0:
-    version "1.6.0"
-    resolved "https://registry.yarnpkg.com/jsonlint-lines-primitives/-/jsonlint-lines-primitives-1.6.0.tgz#bb89f60c8b9b612fd913ddaa236649b840d86611"
-    dependencies:
-      JSV ">= 4.0.x"
-      nomnom ">= 1.5.x"
-  
   jsonpointer@^4.0.0:
     version "4.0.1"
     resolved "https://registry.yarnpkg.com/jsonpointer/-/jsonpointer-4.0.1.tgz#4fd92cb34e0e9db3c89c8622ecf51f9b978c6cb9"
@@ -5033,10 +4861,6 @@ Lockfile:
     version "1.5.0"
     resolved "https://registry.yarnpkg.com/kareem/-/kareem-1.5.0.tgz#e3e4101d9dcfde299769daf4b4db64d895d17448"
   
-  kdbush@^1.0.1:
-    version "1.0.1"
-    resolved "https://registry.yarnpkg.com/kdbush/-/kdbush-1.0.1.tgz#3cbd03e9dead9c0f6f66ccdb96450e5cecc640e0"
-  
   killable@^1.0.0:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/killable/-/killable-1.0.0.tgz#da8b84bd47de5395878f95d64d02f2449fe05e6b"
@@ -5053,7 +4877,7 @@ Lockfile:
     dependencies:
       is-buffer "^1.1.5"
   
-  kind-of@^5.0.0, kind-of@^5.0.2:
+  kind-of@^5.0.0:
     version "5.1.0"
     resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-5.1.0.tgz#729c91e2d857b7a419a1f9aa65685c4c33f5845d"
   
@@ -5453,18 +5277,6 @@ Lockfile:
     version "0.2.8"
     resolved "https://registry.yarnpkg.com/macaddress/-/macaddress-0.2.8.tgz#5904dc537c39ec6dbefeae902327135fa8511f12"
   
-  magic-string@^0.14.0:
-    version "0.14.0"
-    resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.14.0.tgz#57224aef1701caeed273b17a39a956e72b172462"
-    dependencies:
-      vlq "^0.2.1"
-  
-  magic-string@^0.22.4:
-    version "0.22.4"
-    resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.22.4.tgz#31039b4e40366395618c1d6cf8193c53917475ff"
-    dependencies:
-      vlq "^0.2.1"
-  
   make-dir@^1.0.0:
     version "1.2.0"
     resolved "https://registry.yarnpkg.com/make-dir/-/make-dir-1.2.0.tgz#6d6a49eead4aae296c53bbf3a1a008bd6c89469b"
@@ -5495,42 +5307,6 @@ Lockfile:
     dependencies:
       object-visit "^1.0.0"
   
-  mapbox-gl@0.44, mapbox-gl@^0.44.1:
-    version "0.44.1"
-    resolved "https://registry.yarnpkg.com/mapbox-gl/-/mapbox-gl-0.44.1.tgz#bd4964f71a937c0eca4cc8b00330f2bfcbddc37c"
-    dependencies:
-      "@mapbox/gl-matrix" "^0.0.1"
-      "@mapbox/mapbox-gl-supported" "^1.3.0"
-      "@mapbox/point-geometry" "^0.1.0"
-      "@mapbox/shelf-pack" "^3.1.0"
-      "@mapbox/tiny-sdf" "^1.1.0"
-      "@mapbox/unitbezier" "^0.0.0"
-      "@mapbox/vector-tile" "^1.3.0"
-      "@mapbox/whoots-js" "^3.0.0"
-      brfs "^1.4.0"
-      bubleify "^0.7.0"
-      csscolorparser "~1.0.2"
-      earcut "^2.1.3"
-      geojson-rewind "^0.3.0"
-      geojson-vt "^3.0.0"
-      gray-matter "^3.0.8"
-      grid-index "^1.0.0"
-      jsonlint-lines-primitives "~1.6.0"
-      minimist "0.0.8"
-      package-json-versionify "^1.0.2"
-      pbf "^3.0.5"
-      quickselect "^1.0.0"
-      rw "^1.3.3"
-      shuffle-seed "^1.1.6"
-      sort-object "^0.3.2"
-      supercluster "^2.3.0"
-      through2 "^2.0.3"
-      tinyqueue "^1.1.0"
-      unassertify "^2.0.0"
-      unflowify "^1.0.0"
-      vt-pbf "^3.0.1"
-      webworkify "^1.5.0"
-  
   matcher@^0.1.1:
     version "0.1.2"
     resolved "https://registry.yarnpkg.com/matcher/-/matcher-0.1.2.tgz#ef20cbde64c24c50cc61af5b83ee0b1b8ff00101"
@@ -5540,16 +5316,6 @@ Lockfile:
   math-expression-evaluator@^1.2.14:
     version "1.2.17"
     resolved "https://registry.yarnpkg.com/math-expression-evaluator/-/math-expression-evaluator-1.2.17.tgz#de819fdbcd84dccd8fae59c6aeb79615b9d266ac"
-  
-  math.gl@^1.0.0:
-    version "1.0.2"
-    resolved "https://registry.yarnpkg.com/math.gl/-/math.gl-1.0.2.tgz#b714c0d0f68b787c90ba026dad38e104a3e004d9"
-    dependencies:
-      gl-mat4 "^1.1.4"
-      gl-quat "^1.0.0"
-      gl-vec2 "^1.0.0"
-      gl-vec3 "^1.0.3"
-      gl-vec4 "^1.0.1"
   
   max-timeout@^1.0.0:
     version "1.0.0"
@@ -5608,12 +5374,6 @@ Lockfile:
   merge-descriptors@1.0.1:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/merge-descriptors/-/merge-descriptors-1.0.1.tgz#b00aaa556dd8b44568150ec9d1b953f3f90cbb61"
-  
-  merge-source-map@1.0.4:
-    version "1.0.4"
-    resolved "https://registry.yarnpkg.com/merge-source-map/-/merge-source-map-1.0.4.tgz#a5de46538dae84d4114cc5ea02b4772a6346701f"
-    dependencies:
-      source-map "^0.5.6"
   
   merge-stream@^1.0.0:
     version "1.0.1"
@@ -5729,12 +5489,6 @@ Lockfile:
       for-in "^1.0.2"
       is-extendable "^1.0.1"
   
-  mjolnir.js@^1.0.0:
-    version "1.0.1"
-    resolved "https://registry.yarnpkg.com/mjolnir.js/-/mjolnir.js-1.0.1.tgz#0ce2389c18e8de00a402b3ff4b91aaee0b2a6dc6"
-    dependencies:
-      hammerjs "^2.0.8"
-  
   mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkdirp@~0.5.1:
     version "0.5.1"
     resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-0.5.1.tgz#30057438eac6cf7f8c4767f38648d6697d75c903"
@@ -5847,12 +5601,6 @@ Lockfile:
   ms@^0.7.1:
     version "0.7.3"
     resolved "https://registry.yarnpkg.com/ms/-/ms-0.7.3.tgz#708155a5e44e33f5fd0fc53e81d0d40a91be1fff"
-  
-  multi-stage-sourcemap@^0.2.1:
-    version "0.2.1"
-    resolved "https://registry.yarnpkg.com/multi-stage-sourcemap/-/multi-stage-sourcemap-0.2.1.tgz#b09fc8586eaa17f81d575c4ad02e0f7a3f6b1105"
-    dependencies:
-      source-map "^0.1.34"
   
   multicast-dns-service-types@^1.1.0:
     version "1.1.0"
@@ -6004,13 +5752,6 @@ Lockfile:
       undefsafe "^2.0.2"
       update-notifier "^2.3.0"
   
-  "nomnom@>= 1.5.x":
-    version "1.8.1"
-    resolved "https://registry.yarnpkg.com/nomnom/-/nomnom-1.8.1.tgz#2151f722472ba79e50a76fc125bb8c8f2e4dc2a7"
-    dependencies:
-      chalk "~0.4.0"
-      underscore "~1.6.0"
-  
   nopt@3.x:
     version "3.0.6"
     resolved "https://registry.yarnpkg.com/nopt/-/nopt-3.0.6.tgz#c6465dbf08abcd4db359317f79ac68a646b28ff9"
@@ -6085,10 +5826,6 @@ Lockfile:
     dependencies:
       boolbase "~1.0.0"
   
-  null-loader@^0.1.1:
-    version "0.1.1"
-    resolved "https://registry.yarnpkg.com/null-loader/-/null-loader-0.1.1.tgz#17be9abfcd3ff0e1512f6fc4afcb1f5039378fae"
-  
   num2fraction@^1.2.2:
     version "1.2.2"
     resolved "https://registry.yarnpkg.com/num2fraction/-/num2fraction-1.2.2.tgz#6f682b6a027a4e9ddfa4564cd2589d1d4e669ede"
@@ -6151,15 +5888,11 @@ Lockfile:
       define-property "^0.2.5"
       kind-of "^3.0.3"
   
-  object-inspect@~1.4.0:
-    version "1.4.1"
-    resolved "https://registry.yarnpkg.com/object-inspect/-/object-inspect-1.4.1.tgz#37ffb10e71adaf3748d05f713b4c9452f402cbc4"
-  
   object-is@^1.0.1:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/object-is/-/object-is-1.0.1.tgz#0aa60ec9989a0b3ed795cf4d06f62cf1ad6539b6"
   
-  object-keys@^1.0.11, object-keys@^1.0.6, object-keys@^1.0.8:
+  object-keys@^1.0.11, object-keys@^1.0.8:
     version "1.0.11"
     resolved "https://registry.yarnpkg.com/object-keys/-/object-keys-1.0.11.tgz#c54601778ad560f1142ce0e01bcca8b56d13426d"
   
@@ -6352,12 +6085,6 @@ Lockfile:
     dependencies:
       md5-hex "^1.3.0"
   
-  package-json-versionify@^1.0.2:
-    version "1.0.4"
-    resolved "https://registry.yarnpkg.com/package-json-versionify/-/package-json-versionify-1.0.4.tgz#5860587a944873a6b7e6d26e8e51ffb22315bf17"
-    dependencies:
-      browserify-package-json "^1.0.0"
-  
   package-json@^2.0.0:
     version "2.4.0"
     resolved "https://registry.yarnpkg.com/package-json/-/package-json-2.4.0.tgz#0d15bd67d1cbbddbb2ca222ff2edb86bcb31a8bb"
@@ -6480,13 +6207,6 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/pause-stream/-/pause-stream-0.0.11.tgz#fe5a34b0cbce12b5aa6a2b403ee2e73b602f1445"
     dependencies:
       through "~2.3"
-  
-  pbf@^3.0.5:
-    version "3.1.0"
-    resolved "https://registry.yarnpkg.com/pbf/-/pbf-3.1.0.tgz#f70004badcb281761eabb1e76c92f179f08189e9"
-    dependencies:
-      ieee754 "^1.1.6"
-      resolve-protobuf-schema "^2.0.0"
   
   pbkdf2@^3.0.3:
     version "3.0.14"
@@ -7262,7 +6982,7 @@ Lockfile:
     dependencies:
       asap "~2.0.3"
   
-  prop-types@^15.0.0, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.7, prop-types@^15.5.8, prop-types@^15.6.0:
+  prop-types@^15.0.0, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.7, prop-types@^15.5.8:
     version "15.6.1"
     resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.1.tgz#36644453564255ddda391191fb3a125cbdf654ca"
     dependencies:
@@ -7273,10 +6993,6 @@ Lockfile:
   propagate@0.4.0:
     version "0.4.0"
     resolved "https://registry.yarnpkg.com/propagate/-/propagate-0.4.0.tgz#f3fcca0a6fe06736a7ba572966069617c130b481"
-  
-  protocol-buffers-schema@^2.0.2:
-    version "2.2.0"
-    resolved "https://registry.yarnpkg.com/protocol-buffers-schema/-/protocol-buffers-schema-2.2.0.tgz#d29c6cd73fb655978fb6989691180db844119f61"
   
   proxy-addr@~2.0.2:
     version "2.0.3"
@@ -7371,18 +7087,6 @@ Lockfile:
   querystringify@~1.0.0:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-1.0.0.tgz#6286242112c5b712fa654e526652bf6a13ff05cb"
-  
-  quickselect@^1.0.0:
-    version "1.0.1"
-    resolved "https://registry.yarnpkg.com/quickselect/-/quickselect-1.0.1.tgz#1e6ceaa9db1ca7c75aafcc863c7bef2037ca62a1"
-  
-  quote-stream@^1.0.1, quote-stream@~1.0.2:
-    version "1.0.2"
-    resolved "https://registry.yarnpkg.com/quote-stream/-/quote-stream-1.0.2.tgz#84963f8c9c26b942e153feeb53aae74652b7e0b2"
-    dependencies:
-      buffer-equal "0.0.1"
-      minimist "^1.1.3"
-      through2 "^2.0.0"
   
   r-dom@^2.4.0:
     version "2.4.0"
@@ -7493,32 +7197,6 @@ Lockfile:
       prop-types "^15.5.8"
       react-base16-styling "^0.5.1"
   
-  react-map-gl-heatmap-overlay@^1.1.4:
-    version "1.1.4"
-    resolved "https://registry.yarnpkg.com/react-map-gl-heatmap-overlay/-/react-map-gl-heatmap-overlay-1.1.4.tgz#c0e52556bc9efee7c92e77b24ae17ff15c53c1c5"
-    dependencies:
-      create-react-class "^15.6.0"
-      example-cities "0.0.0"
-      global "^4.3.0"
-      object-assign "^4.0.1"
-      prop-types "^15.6.0"
-      scale-color-perceptual "^1.1.2"
-      viewport-mercator-project "^2.0.1"
-      webgl-heatmap "^0.2.0"
-  
-  react-map-gl@^3.2.5:
-    version "3.2.5"
-    resolved "https://registry.yarnpkg.com/react-map-gl/-/react-map-gl-3.2.5.tgz#4d9b274775f64163e898bdc63a45d7861e13d379"
-    dependencies:
-      babel-runtime "^6.23.0"
-      bowser "^1.2.0"
-      immutable "^3.8.2"
-      mapbox-gl "0.44"
-      math.gl "^1.0.0"
-      mjolnir.js "^1.0.0"
-      prop-types "^15.5.7"
-      viewport-mercator-project "^5.0.0"
-  
   react-proxy@^3.0.0-alpha.0:
     version "3.0.0-alpha.1"
     resolved "https://registry.yarnpkg.com/react-proxy/-/react-proxy-3.0.0-alpha.1.tgz#4400426bcfa80caa6724c7755695315209fa4b07"
@@ -7621,7 +7299,7 @@ Lockfile:
       isarray "0.0.1"
       string_decoder "~0.10.x"
   
-  readable-stream@^2.0.0, readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.4, readable-stream@^2.0.5, readable-stream@^2.0.6, readable-stream@^2.1.4, readable-stream@^2.1.5, readable-stream@^2.2.2, readable-stream@^2.2.9, readable-stream@^2.3.3, readable-stream@~2.3.3:
+  readable-stream@^2.0.0, readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.4, readable-stream@^2.0.5, readable-stream@^2.0.6, readable-stream@^2.1.4, readable-stream@^2.1.5, readable-stream@^2.2.2, readable-stream@^2.2.9, readable-stream@^2.3.3:
     version "2.3.4"
     resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.3.4.tgz#c946c3f47fa7d8eabc0b6150f4a12f69a4574071"
     dependencies:
@@ -7965,12 +7643,6 @@ Lockfile:
     version "3.0.0"
     resolved "https://registry.yarnpkg.com/resolve-from/-/resolve-from-3.0.0.tgz#b22c7af7d9d6881bc8b6e653335eebcb0a188748"
   
-  resolve-protobuf-schema@^2.0.0:
-    version "2.0.0"
-    resolved "https://registry.yarnpkg.com/resolve-protobuf-schema/-/resolve-protobuf-schema-2.0.0.tgz#e67b062a67f02d11bd6886e70efda788407e0fb4"
-    dependencies:
-      protocol-buffers-schema "^2.0.2"
-  
   resolve-url@^0.2.1:
     version "0.2.1"
     resolved "https://registry.yarnpkg.com/resolve-url/-/resolve-url-0.2.1.tgz#2c637fe77c893afd2a663fe21aa9080068e2052a"
@@ -7979,7 +7651,7 @@ Lockfile:
     version "1.1.7"
     resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.1.7.tgz#203114d82ad2c5ed9e8e0411b3932875e889e97b"
   
-  resolve@^1.1.5, resolve@^1.1.6:
+  resolve@^1.1.6:
     version "1.5.0"
     resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.5.0.tgz#1f09acce796c9a762579f31b2c1cc4c3cddf9f36"
     dependencies:
@@ -8029,10 +7701,6 @@ Lockfile:
     dependencies:
       once "^1.3.0"
   
-  rw@^1.3.3:
-    version "1.3.3"
-    resolved "https://registry.yarnpkg.com/rw/-/rw-1.3.3.tgz#3f862dfa91ab766b14885ef4d01124bfda074fb4"
-  
   rx-lite@^3.1.2:
     version "3.1.2"
     resolved "https://registry.yarnpkg.com/rx-lite/-/rx-lite-3.1.2.tgz#19ce502ca572665f3b647b10939f97fd1615f102"
@@ -8074,13 +7742,9 @@ Lockfile:
     version "1.2.4"
     resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
   
-  scale-color-perceptual@^1.1.2:
-    version "1.1.2"
-    resolved "https://registry.yarnpkg.com/scale-color-perceptual/-/scale-color-perceptual-1.1.2.tgz#370fb1aa1fc48261d3048f34edfe6155fb0a52d5"
-  
-  seedrandom@^2.4.2:
-    version "2.4.3"
-    resolved "https://registry.yarnpkg.com/seedrandom/-/seedrandom-2.4.3.tgz#2438504dad33917314bff18ac4d794f16d6aaecc"
+  scriptjs@^2.5.7:
+    version "2.5.8"
+    resolved "https://registry.yarnpkg.com/scriptjs/-/scriptjs-2.5.8.tgz#d0c43955c2e6bad33b6e4edf7b53b8965aa7ca5f"
   
   seek-bzip@^1.0.3:
     version "1.0.5"
@@ -8206,10 +7870,6 @@ Lockfile:
       inherits "^2.0.1"
       safe-buffer "^5.0.1"
   
-  shallow-copy@~0.0.1:
-    version "0.0.1"
-    resolved "https://registry.yarnpkg.com/shallow-copy/-/shallow-copy-0.0.1.tgz#415f42702d73d810330292cc5ee86eae1a11a170"
-  
   shallowequal@^1.0.1:
     version "1.0.2"
     resolved "https://registry.yarnpkg.com/shallowequal/-/shallowequal-1.0.2.tgz#1561dbdefb8c01408100319085764da3fcf83f8f"
@@ -8227,12 +7887,6 @@ Lockfile:
   shelljs@^0.6.0:
     version "0.6.1"
     resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.6.1.tgz#ec6211bed1920442088fe0f70b2837232ed2c8a8"
-  
-  shuffle-seed@^1.1.6:
-    version "1.1.6"
-    resolved "https://registry.yarnpkg.com/shuffle-seed/-/shuffle-seed-1.1.6.tgz#533c12683bab3b4fa3e8751fc4e562146744260b"
-    dependencies:
-      seedrandom "^2.4.2"
   
   signal-exit@^3.0.0, signal-exit@^3.0.2:
     version "3.0.2"
@@ -8324,26 +7978,11 @@ Lockfile:
       faye-websocket "^0.10.0"
       uuid "^3.0.1"
   
-  sort-asc@^0.1.0:
-    version "0.1.0"
-    resolved "https://registry.yarnpkg.com/sort-asc/-/sort-asc-0.1.0.tgz#ab799df61fc73ea0956c79c4b531ed1e9e7727e9"
-  
-  sort-desc@^0.1.1:
-    version "0.1.1"
-    resolved "https://registry.yarnpkg.com/sort-desc/-/sort-desc-0.1.1.tgz#198b8c0cdeb095c463341861e3925d4ee359a9ee"
-  
   sort-keys@^1.0.0, sort-keys@^1.1.1:
     version "1.1.2"
     resolved "https://registry.yarnpkg.com/sort-keys/-/sort-keys-1.1.2.tgz#441b6d4d346798f1b4e49e8920adfba0e543f9ad"
     dependencies:
       is-plain-obj "^1.0.0"
-  
-  sort-object@^0.3.2:
-    version "0.3.2"
-    resolved "https://registry.yarnpkg.com/sort-object/-/sort-object-0.3.2.tgz#98e0d199ede40e07c61a84403c61d6c3b290f9e2"
-    dependencies:
-      sort-asc "^0.1.0"
-      sort-desc "^0.1.1"
   
   source-list-map@^0.1.4, source-list-map@~0.1.7:
     version "0.1.8"
@@ -8373,12 +8012,6 @@ Lockfile:
     version "0.5.6"
     resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.6.tgz#75ce38f52bf0733c5a7f0c118d81334a2bb5f412"
   
-  source-map@^0.1.34, source-map@~0.1.38:
-    version "0.1.43"
-    resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.1.43.tgz#c24bc146ca517c1471f5dacbe2571b2b7f9e3346"
-    dependencies:
-      amdefine ">=0.0.4"
-  
   source-map@^0.4.4:
     version "0.4.4"
     resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.4.4.tgz#eba4f5da9c0dc999de68032d8b4f76173652036b"
@@ -8392,6 +8025,12 @@ Lockfile:
   source-map@^0.6.1, source-map@~0.6.1:
     version "0.6.1"
     resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
+  
+  source-map@~0.1.38:
+    version "0.1.43"
+    resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.1.43.tgz#c24bc146ca517c1471f5dacbe2571b2b7f9e3346"
+    dependencies:
+      amdefine ">=0.0.4"
   
   source-map@~0.2.0:
     version "0.2.0"
@@ -8517,37 +8156,12 @@ Lockfile:
     version "0.2.2"
     resolved "https://registry.yarnpkg.com/stat-mode/-/stat-mode-0.2.2.tgz#e6c80b623123d7d80cf132ce538f346289072502"
   
-  static-eval@^2.0.0:
-    version "2.0.0"
-    resolved "https://registry.yarnpkg.com/static-eval/-/static-eval-2.0.0.tgz#0e821f8926847def7b4b50cda5d55c04a9b13864"
-    dependencies:
-      escodegen "^1.8.1"
-  
   static-extend@^0.1.1:
     version "0.1.2"
     resolved "https://registry.yarnpkg.com/static-extend/-/static-extend-0.1.2.tgz#60809c39cbff55337226fd5e0b520f341f1fb5c6"
     dependencies:
       define-property "^0.2.5"
       object-copy "^0.1.0"
-  
-  static-module@^2.2.0:
-    version "2.2.0"
-    resolved "https://registry.yarnpkg.com/static-module/-/static-module-2.2.0.tgz#db9bb7b95792b4819a2239e4b169ceacf847ada4"
-    dependencies:
-      concat-stream "~1.6.0"
-      convert-source-map "^1.5.1"
-      duplexer2 "~0.1.4"
-      escodegen "~1.9.0"
-      falafel "^2.1.0"
-      has "^1.0.1"
-      magic-string "^0.22.4"
-      merge-source-map "1.0.4"
-      object-inspect "~1.4.0"
-      quote-stream "~1.0.2"
-      readable-stream "~2.3.3"
-      shallow-copy "~0.0.1"
-      static-eval "^2.0.0"
-      through2 "~2.0.3"
   
   "statuses@>= 1.3.1 < 2":
     version "1.4.0"
@@ -8655,10 +8269,6 @@ Lockfile:
       first-chunk-stream "^1.0.0"
       strip-bom "^2.0.0"
   
-  strip-bom-string@^1.0.0:
-    version "1.0.0"
-    resolved "https://registry.yarnpkg.com/strip-bom-string/-/strip-bom-string-1.0.0.tgz#e5211e9224369fbb81d633a2f00044dc8cedad92"
-  
   strip-bom@^2.0.0:
     version "2.0.0"
     resolved "https://registry.yarnpkg.com/strip-bom/-/strip-bom-2.0.0.tgz#6219a85616520491f35788bdbf1447a99c7e6b0e"
@@ -8705,12 +8315,6 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/sum-up/-/sum-up-1.0.3.tgz#1c661f667057f63bcb7875aa1438bc162525156e"
     dependencies:
       chalk "^1.0.0"
-  
-  supercluster@^2.3.0:
-    version "2.3.0"
-    resolved "https://registry.yarnpkg.com/supercluster/-/supercluster-2.3.0.tgz#87ab56081bbea9a1d724df5351ee9e8c3af2f48b"
-    dependencies:
-      kdbush "^1.0.1"
   
   supports-color@^2.0.0:
     version "2.0.0"
@@ -8839,14 +8443,14 @@ Lockfile:
       readable-stream ">=1.0.33-1 <1.1.0-0"
       xtend ">=4.0.0 <4.1.0-0"
   
-  through2@^2.0.0, through2@^2.0.3, through2@~2.0.0, through2@~2.0.3:
+  through2@^2.0.0, through2@~2.0.0:
     version "2.0.3"
     resolved "https://registry.yarnpkg.com/through2/-/through2-2.0.3.tgz#0004569b37c7c74ba39c43f3ced78d1ad94140be"
     dependencies:
       readable-stream "^2.1.5"
       xtend "~4.0.1"
   
-  through@2, through@^2.3.6, through@^2.3.7, through@^2.3.8, through@~2.3, through@~2.3.1:
+  through@2, through@^2.3.6, through@~2.3, through@~2.3.1:
     version "2.3.8"
     resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
   
@@ -8880,10 +8484,6 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/timers-browserify/-/timers-browserify-1.4.2.tgz#c9c58b575be8407375cb5e2462dacee74359f41d"
     dependencies:
       process "~0.11.0"
-  
-  tinyqueue@^1.1.0:
-    version "1.2.3"
-    resolved "https://registry.yarnpkg.com/tinyqueue/-/tinyqueue-1.2.3.tgz#b6a61de23060584da29f82362e45df1ec7353f3d"
   
   to-absolute-glob@^0.1.1:
     version "0.1.1"
@@ -9037,45 +8637,11 @@ Lockfile:
     version "0.0.3"
     resolved "https://registry.yarnpkg.com/uid2/-/uid2-0.0.3.tgz#483126e11774df2f71b8b639dcd799c376162b82"
   
-  unassert@^1.3.1:
-    version "1.5.1"
-    resolved "https://registry.yarnpkg.com/unassert/-/unassert-1.5.1.tgz#cbc88ec387417c5a5e4c02d3cd07be98bd75ff76"
-    dependencies:
-      acorn "^4.0.0"
-      call-matcher "^1.0.1"
-      deep-equal "^1.0.0"
-      espurify "^1.3.0"
-      estraverse "^4.1.0"
-      esutils "^2.0.2"
-      object-assign "^4.1.0"
-  
-  unassertify@^2.0.0:
-    version "2.1.0"
-    resolved "https://registry.yarnpkg.com/unassertify/-/unassertify-2.1.0.tgz#6b07abf5c6598ba3852a27a676caad1df526a96d"
-    dependencies:
-      acorn "^5.1.0"
-      convert-source-map "^1.1.1"
-      escodegen "^1.6.1"
-      multi-stage-sourcemap "^0.2.1"
-      through "^2.3.7"
-      unassert "^1.3.1"
-  
   undefsafe@^2.0.2:
     version "2.0.2"
     resolved "https://registry.yarnpkg.com/undefsafe/-/undefsafe-2.0.2.tgz#225f6b9e0337663e0d8e7cfd686fc2836ccace76"
     dependencies:
       debug "^2.2.0"
-  
-  underscore@~1.6.0:
-    version "1.6.0"
-    resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.6.0.tgz#8b38b10cacdef63337b8b24e4ff86d45aea529a8"
-  
-  unflowify@^1.0.0:
-    version "1.0.1"
-    resolved "https://registry.yarnpkg.com/unflowify/-/unflowify-1.0.1.tgz#a2ea0d25c0affcc46955e6473575f7c5a1f4a696"
-    dependencies:
-      flow-remove-types "^1.1.2"
-      through "^2.3.8"
   
   union-value@^1.0.0:
     version "1.0.0"
@@ -9283,16 +8849,6 @@ Lockfile:
     version "0.2.0"
     resolved "https://registry.yarnpkg.com/viewport-dimensions/-/viewport-dimensions-0.2.0.tgz#de740747db5387fd1725f5175e91bac76afdf36c"
   
-  viewport-mercator-project@^2.0.1:
-    version "2.1.0"
-    resolved "https://registry.yarnpkg.com/viewport-mercator-project/-/viewport-mercator-project-2.1.0.tgz#6ae6249d199a80ca01319cdd821d7c6b7feae792"
-  
-  viewport-mercator-project@^5.0.0:
-    version "5.0.0"
-    resolved "https://registry.yarnpkg.com/viewport-mercator-project/-/viewport-mercator-project-5.0.0.tgz#d18709dad652581108a6dd58f320409491d40982"
-    dependencies:
-      math.gl "^1.0.0"
-  
   vinyl-assign@^1.0.1:
     version "1.2.1"
     resolved "https://registry.yarnpkg.com/vinyl-assign/-/vinyl-assign-1.2.1.tgz#4d198891b5515911d771a8cd9c5480a46a074a45"
@@ -9337,23 +8893,11 @@ Lockfile:
       clone-stats "^0.0.1"
       replace-ext "0.0.1"
   
-  vlq@^0.2.1:
-    version "0.2.3"
-    resolved "https://registry.yarnpkg.com/vlq/-/vlq-0.2.3.tgz#8f3e4328cf63b1540c0d67e1b2778386f8975b26"
-  
   vm-browserify@0.0.4:
     version "0.0.4"
     resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-0.0.4.tgz#5d7ea45bbef9e4a6ff65f95438e0a87c357d5a73"
     dependencies:
       indexof "0.0.1"
-  
-  vt-pbf@^3.0.1:
-    version "3.1.0"
-    resolved "https://registry.yarnpkg.com/vt-pbf/-/vt-pbf-3.1.0.tgz#d7e63f585b362cbff6b84fcd052c159112e0acc7"
-    dependencies:
-      "@mapbox/point-geometry" "0.1.0"
-      "@mapbox/vector-tile" "^1.3.0"
-      pbf "^3.0.5"
   
   warning@^2.0.0:
     version "2.1.0"
@@ -9380,13 +8924,6 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/wbuf/-/wbuf-1.7.2.tgz#d697b99f1f59512df2751be42769c1580b5801fe"
     dependencies:
       minimalistic-assert "^1.0.0"
-  
-  webgl-heatmap@^0.2.0:
-    version "0.2.3"
-    resolved "https://registry.yarnpkg.com/webgl-heatmap/-/webgl-heatmap-0.2.3.tgz#e76832295b17e9ec57790e261cf17bb31484f3fd"
-    dependencies:
-      brfs "^1.4.1"
-      global "^4.3.0"
   
   webidl-conversions@^3.0.0:
     version "3.0.1"
@@ -9504,14 +9041,6 @@ Lockfile:
   websocket-extensions@>=0.1.1:
     version "0.1.3"
     resolved "https://registry.yarnpkg.com/websocket-extensions/-/websocket-extensions-0.1.3.tgz#5d2ff22977003ec687a4b87073dfbbac146ccf29"
-  
-  webworkify@^1.5.0:
-    version "1.5.0"
-    resolved "https://registry.yarnpkg.com/webworkify/-/webworkify-1.5.0.tgz#734ad87a774de6ebdd546e1d3e027da5b8f4a42c"
-  
-  wgs84@0.0.0:
-    version "0.0.0"
-    resolved "https://registry.yarnpkg.com/wgs84/-/wgs84-0.0.0.tgz#34fdc555917b6e57cf2a282ed043710c049cdc76"
   
   whatwg-encoding@^1.0.1:
     version "1.0.3"
