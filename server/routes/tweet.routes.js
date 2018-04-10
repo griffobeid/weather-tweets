@@ -1,11 +1,14 @@
 import { Router } from 'express';
 import * as TweetController from '../controllers/tweet.controller';
+
 const router = new Router();
 
 // Get all Tweets
 router.route('/tweets').get(TweetController.getTweets);
 
 // Get one tweet by id
-router.route('/tweets/:id').get(TweetController.getTweets);
+router.route('/tweets/:id').get(TweetController.getTweet);
+
+router.route('/tweets/:date').get(TweetController.getTweetsByDate);
 
 export default router;
