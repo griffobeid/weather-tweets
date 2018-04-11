@@ -3,6 +3,7 @@ var path = require('path');
 var cssnext = require('postcss-cssnext');
 var postcssFocus = require('postcss-focus');
 var postcssReporter = require('postcss-reporter');
+var Dotenv = require('dotenv-webpack');
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
@@ -68,6 +69,7 @@ module.exports = {
   },
 
   plugins: [
+    new Dotenv(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',

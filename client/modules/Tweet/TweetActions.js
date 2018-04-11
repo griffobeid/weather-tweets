@@ -10,9 +10,19 @@ export function addTweets(tweets) {
   };
 }
 
-export function fetchTweets() {
+export function fetchRecentTweets() {
   return (dispatch) => {
-    return callApi('tweets').then(res => {
+    return callApi('tweets/recent').then(res => {
+      dispatch(addTweets(res.tweets));
+    }).catch(err => {
+      throw err;
+    });
+  };
+}
+
+export function fetchTweetsByDate(lowerBound, upperBound) {
+  return (dispatch) => {
+    return callApi(`tweets/${lowerBound}/${upperBound}`).then(res => {
       dispatch(addTweets(res.tweets));
     }).catch(err => {
       throw err;
