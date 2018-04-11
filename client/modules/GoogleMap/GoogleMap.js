@@ -1,10 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import GoogleMapReact from 'google-map-react';
-import style from './style.json';
+import style from './mapStyle.json';
 
 // Import Actions
-import { fetchTweets } from '../Tweet/TweetActions';
+import { fetchRecentTweets } from '../Tweet/TweetActions';
 
 // Import Selectors
 import { getTweets } from '../Tweet/TweetReducer';
@@ -26,16 +26,17 @@ class GoogleMap extends Component {
   }
 
   componentDidMount() {
-    this.props.dispatch(fetchTweets());
+    this.props.dispatch(fetchRecentTweets());
   }
 
   render() {
     const { center, options, zoom } = this.state;
-    const points = this.props.tweets.map(tweet => { return { location: [tweet.latitude, tweet.longitude], weight: 1 }; });
+    console.log(this.props.tweets.length);
     return (
       <div style={{ height: '100vh', width: '100%' }}>
         <GoogleMapReact
           bootstrapURLKeys={{
+            key: process.env.GOOGLE_MAP_API_KEY,
             libraries: 'visualization',
           }}
           defaultCenter={center}
@@ -44,10 +45,11 @@ class GoogleMap extends Component {
           yesIWantToUseGoogleMapApiInternals
           onGoogleApiLoaded={({ map, maps }) => {
             const heatmap = new maps.visualization.HeatmapLayer({
-              data: points.map(point => ({
-                location: new maps.LatLng(point.location[0], point.location[1]),
-                weight: point.weight,
+              data: this.props.tweets.map(tweet => ({
+                location: new maps.LatLng(tweet.latitude, tweet.longitude),
               })),
+              opacity: 0.7,
+              radius: 15,
             });
             heatmap.setMap(map);
           }}
@@ -58,7 +60,7 @@ class GoogleMap extends Component {
 }
 
 // Actions required to provide data for this component to render in sever side.
-GoogleMap.need = [() => { return fetchTweets(); }];
+GoogleMap.need = [() => { return fetchRecentTweets(); }];
 
 // Retrieve data from store as props
 function mapStateToProps(state) {
